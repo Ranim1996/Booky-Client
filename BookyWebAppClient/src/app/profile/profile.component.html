@@ -4,7 +4,7 @@
 
         <h1>Profile:</h1>
         <!-- <ul id="test" *ngFor="let u of users"> -->
-            {{user.firstName}} {{user.lastName}}
+            <!-- {{user.firstName}} {{user.lastName}} -->
         <!-- </ul> -->
 
     </div>
@@ -73,7 +73,7 @@
 
                 <div class="example-button-container">
                     <button class="float-right" mat-mini-fab aria-label="Example icon button with a save alt icon" >
-                        <mat-icon matTooltip="Save Changes" >save_alt</mat-icon>
+                        <mat-icon matTooltip="Save Changes" (click)="openDialog(user)" >save_alt</mat-icon>
                     </button>
                 </div>
 

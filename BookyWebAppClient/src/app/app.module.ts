@@ -60,14 +60,15 @@ import { HeaderComponent } from './header/header.component';
 
 import { A11yModule } from '@angular/cdk/a11y';
 import { ProfileComponent } from './profile/profile.component';
-
+import { UpdatePersonalInformationComponent } from './update-personal-information/update-personal-information.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
-    ProfileComponent
+    ProfileComponent,
+    UpdatePersonalInformationComponent
   ],
   imports: [
     BrowserModule,
