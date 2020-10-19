@@ -1,7 +1,10 @@
+import { Country } from './../classes/Profile/Country';
+import { Language } from './../classes/Profile/Language';
 import { ProfileService } from './../services/Profile/profile.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { User } from '../classes/Profile/User';
+import { Users } from '../classes/Profile/Users';
+import { UserType } from '../classes/Profile/UserType';
 
 @Component({
   selector: 'app-profile',
@@ -12,7 +15,13 @@ export class ProfileComponent implements OnInit {
 
   //fields
   loggedInUser: number = 1;
-  users: User[];
+  users: Users[];
+
+  arabic = new Language ("AR", "Arabic");
+  syria = new Country ("SY", "Syria");
+  user = new Users(1, "Ranim", "Alayoubi", "06/06/1996" , UserType.Admin, "ranim@gmail.com",
+  "password199","0684567447", this.syria, this.arabic);
+
 
   //constracture
   constructor(private profileService: ProfileService,
@@ -21,16 +30,22 @@ export class ProfileComponent implements OnInit {
 
   //methods
   ngOnInit(): void {
-    this.profileService.getUser().subscribe((data)=>{
-      console.log(data);
-     this.users = <User[]>data;
-    //  this.users = data['users'];
-    });
-
-    // this.profileService.getUserById(this.loggedInUser).subscribe((data)=>{
+    // this.profileService.getUser().subscribe((data)=>{
+    //   console.log(data);
     //  this.users = <User[]>data;
-    //  console.log(this.users);
     // });
+
+    // this.id = +this.route.snapshot.paramMap.get('id');
+    // this.profileService.getUserById('id')
+    // .subscribe((data)=>{
+    //   console.log(data);
+    // this.user = <Users>data;
+    // });
+
+    this.profileService.getUserById(this.loggedInUser).subscribe((data)=>{
+     this.users = <Users[]>data;
+     console.log(this.users);
+    });
 
   }
 
