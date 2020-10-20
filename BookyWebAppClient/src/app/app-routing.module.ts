@@ -1,7 +1,7 @@
+import { HomePageComponent } from './home-page/home-page.component';
 import { BookPostsComponent } from './book-posts/book-posts.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {HomeComponent} from './home/home.component';
 import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
@@ -14,8 +14,8 @@ const routes: Routes = [
     component: BookPostsComponent
   },
   {
-    path: 'booky/users/:id/home', 
-    component: HomeComponent
+    path: 'booky/users/:id/homePage', 
+    component: HomePageComponent
   },
 ]
 

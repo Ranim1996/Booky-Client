@@ -4,7 +4,6 @@ import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -62,15 +61,16 @@ import { A11yModule } from '@angular/cdk/a11y';
 import { ProfileComponent } from './profile/profile.component';
 import { UpdatePersonalInformationComponent } from './update-personal-information/update-personal-information.component';
 import { BookPostsComponent } from './book-posts/book-posts.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     HeaderComponent,
     ProfileComponent,
     UpdatePersonalInformationComponent,
-    BookPostsComponent
+    BookPostsComponent,
+    HomePageComponent
   ],
   imports: [
     BrowserModule,

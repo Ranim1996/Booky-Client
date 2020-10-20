@@ -1,0 +1,25 @@
+.example-card {
+    max-width: 600px;
+    margin-left: 450px;
+    margin-top: 75px;
+    background: lavenderblush;
+  }
+  
+  .mat-flat-button.mat-accent, .mat-raised-button.mat-accent, .mat-fab.mat-accent, .mat-mini-fab.mat-accent {
+    background-color: white;
+    color: palevioletred;
+    margin-left: 20px;
+  }
+  
+  .mat-card-content{
+    margin-left: 20px;
+  }
+  
+  /* .delete{
+    margin-left: 300px;
+  } */
+  
+  
+  /* .example-header-image {
+    background-size: cover;
+  } */
