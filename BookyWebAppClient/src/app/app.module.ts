@@ -61,6 +61,7 @@ import { HeaderComponent } from './header/header.component';
 import { A11yModule } from '@angular/cdk/a11y';
 import { ProfileComponent } from './profile/profile.component';
 import { UpdatePersonalInformationComponent } from './update-personal-information/update-personal-information.component';
+import { BookPostsComponent } from './book-posts/book-posts.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +69,8 @@ import { UpdatePersonalInformationComponent } from './update-personal-informatio
     HomeComponent,
     HeaderComponent,
     ProfileComponent,
-    UpdatePersonalInformationComponent
+    UpdatePersonalInformationComponent,
+    BookPostsComponent
   ],
   imports: [
     BrowserModule,

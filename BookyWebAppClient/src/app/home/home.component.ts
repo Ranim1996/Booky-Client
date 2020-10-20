@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute } from '@angular/router';
+import { PostService } from '../services/Post/post.service';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(postService: PostService,
+    private route: ActivatedRoute,
+    public dialog: MatDialog) 
+    { }
 
   ngOnInit(): void {
   }
