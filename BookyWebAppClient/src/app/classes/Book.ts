@@ -5,8 +5,9 @@ export class Book{
     id: number;
     bookName: String; 
     authorName: String; 
-    type: BookType;
-    describtion: String;
+    bookType: BookType;
+    describtion: String; 
     time: Date;
-    Language: Language;
+    language: Language;
+    
 }

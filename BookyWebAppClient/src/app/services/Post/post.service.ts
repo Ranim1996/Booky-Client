@@ -12,15 +12,16 @@ export class PostService {
     return this.httpClient.get('http://localhost:9090/booky/books/');
    }
 
-   public createPost(data){
-     return this.httpClient.post('http://localhost:9090/booky/books/', data).toPromise().then(data => {
-       console.log(data);
-     });
+  public createPost(data){
+    return this.httpClient.post('http://localhost:9090/booky/books/', data).toPromise().then(data => {
+      console.log(data);
+    });
      
    }
-   public deletePost(id){
-     return this.httpClient.delete('http://localhost:9090/booky/books/'+ id).toPromise().then(data => {
-       console.log(data);
-     });
-   }
+
+   public deletePost(bookId){
+    return this.httpClient.delete('http://localhost:9090/booky/books/' + bookId);
+  }
+
+
 }

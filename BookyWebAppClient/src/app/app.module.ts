@@ -62,6 +62,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { UpdatePersonalInformationComponent } from './update-personal-information/update-personal-information.component';
 import { BookPostsComponent } from './book-posts/book-posts.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { DeletePostComponent } from './delete-post/delete-post.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { HomePageComponent } from './home-page/home-page.component';
     ProfileComponent,
     UpdatePersonalInformationComponent,
     BookPostsComponent,
-    HomePageComponent
+    HomePageComponent,
+    DeletePostComponent
   ],
   imports: [
     BrowserModule,
