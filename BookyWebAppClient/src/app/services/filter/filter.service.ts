@@ -8,7 +8,7 @@ export class FilterService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public filterBooksByFantasyType(bookType){
+  public filterBooksByBookType(bookType){
     return this.httpClient.get('http://localhost:9090/booky/books?type=' + bookType);
   }
 

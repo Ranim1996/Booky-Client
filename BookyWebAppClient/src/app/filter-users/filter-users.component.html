@@ -10,7 +10,7 @@
           <mat-card-content>
       
             <p>
-              <mat-radio-group aria-label="Select an option" ng-init="selectedUserType" [(ngModel)]="selectionRadio" (ngModelChange)="foundDataRadio()">
+              <mat-radio-group aria-label="Select an option" ng-init="selectedUserType" [(ngModel)]="selectionLanguage" (ngModelChange)="foundDataByLanguage()">
                 <br>
                 <label>Book Type:</label>
                 <br>
@@ -23,15 +23,15 @@
       
             <br>
 
-            <!-- <h4>Language</h4>
+            <h4>Book type</h4>
             <mat-form-field appearance="fill">
-                <mat-label>Language</mat-label>
-                <mat-select>
-                <mat-option *ngFor="let l of languages" [value]="l.value">
-                    {{l.viewValue}}
+              <mat-label>Type</mat-label>
+              <mat-select ng-model [(ngModel)]="SelectionType" (ngModelChange)="foundDataByType()">
+                <mat-option *ngFor="let t of types" name="filter" [value]="t.value" (click)="getBooksByBookType(t.value)">
+                  {{t.viewValue}}
                 </mat-option>
-                </mat-select>
-            </mat-form-field> -->
+              </mat-select>
+            </mat-form-field>
       
           </mat-card-content>
         </mat-card>
@@ -46,9 +46,9 @@
             <mat-card-title>Found Books:</mat-card-title>
           </mat-card-header>
 
-          <tr id="test"  *ngFor="let book of books">
+          <tr id="bookId"  *ngFor="let book of books">
             
-            <div *ngIf="foundDataRadio() == 'EN'" >
+            <div *ngIf="foundDataByLanguage() == 'EN'" >
               <td class="font-italic"> 
                 <mat-icon> insert_photo </mat-icon>
                 {{book.bookName}} - {{book.authorName}} <br>
@@ -60,7 +60,7 @@
               </td>
             </div>
 
-            <div *ngIf="foundDataRadio() == 'AR'" >
+            <div *ngIf="foundDataByLanguage() == 'AR'" >
               <td class="font-italic"> 
                 <mat-icon> insert_photo </mat-icon>
                 {{book.bookName}} - {{book.authorName}} <br>
@@ -72,7 +72,7 @@
               </td>
             </div>
 
-            <div *ngIf="foundDataRadio() == 'FR'" >
+            <div *ngIf="foundDataByLanguage() == 'FR'" >
               <td class="font-italic"> 
                 <mat-icon> insert_photo </mat-icon>
                 {{book.bookName}} - {{book.authorName}} <br>
@@ -82,6 +82,24 @@
                 <mat-divider></mat-divider>
                 <br>
               </td>
+            </div>
+
+            <div>
+              <tr id="tests" *ngFor="let t of types">
+
+                <div *ngIf="foundDataByType() == 't.value'" >
+                  <td class="font-italic"> 
+                  <mat-icon> insert_photo </mat-icon>
+                  {{book.bookName}} - {{book.authorName}} <br>
+                  Brief describtion: {{book.describtion}}
+                  <br>
+                  <br>
+                  <mat-divider></mat-divider>
+                  <br>
+                </td>
+                </div>
+
+              </tr>
             </div>
 
           </tr>

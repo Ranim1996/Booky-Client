@@ -11,6 +11,16 @@ import { FilterService } from '../services/filter/filter.service';
 })
 export class FilterUsersComponent implements OnInit {
 
+  types: Object[] = [
+    {value: 'Classics', viewValue: 'Classics'},
+    {value: 'ActionandAdventure', viewValue: 'ActionandAdventure'},
+    {value: 'Romantic', viewValue: 'Romantic'},
+    {value: 'Fantasy', viewValue: 'Fantasy'},
+    {value: 'Horror', viewValue: 'Horror'},
+    {value: 'DetectiveandMystery', viewValue: 'DetectiveandMystery'},
+    {value: 'LitraryFiction', viewValue: 'LitraryFiction'}
+  ];
+
   constructor(private filterService: FilterService,
               private route: ActivatedRoute
               ) { }
@@ -18,8 +28,8 @@ export class FilterUsersComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  selectionRadio: String;
-  selectionDrop: String;
+  selectionLanguage: String;
+  SelectionType: String;
 
   books: Book[]; 
   book: Book;
@@ -48,8 +58,20 @@ export class FilterUsersComponent implements OnInit {
     });
   }
 
-  foundDataRadio(){
-    return this.selectionRadio;
+  getBooksByBookType(bookType){
+    this.filterService.filterBooksByBookType(bookType).subscribe((data)=>
+    {
+      this.books=<Book[]>data;
+      console.log(this.books);      
+    });
+  }
+
+  foundDataByLanguage(){
+    return this.selectionLanguage;
+  }
+
+  foundDataByType(){
+    return this.SelectionType;
   }
 
 
