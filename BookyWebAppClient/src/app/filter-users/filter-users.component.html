@@ -10,20 +10,20 @@
           <mat-card-content>
       
             <p>
-              <mat-radio-group aria-label="Select an option">
+              <mat-radio-group aria-label="Select an option" ng-init="selectedUserType" [(ngModel)]="selectionRadio" (ngModelChange)="foundDataRadio()">
                 <br>
                 <label>Book Type:</label>
                 <br>
-                <mat-radio-button type="radio" name="filter" value="Student" (click)="getBooksByFantasyType()" ngModel>Fantasy</mat-radio-button>
-                <mat-radio-button value="Classics">Classics</mat-radio-button>
-                <mat-radio-button value="Romantic">Romantic</mat-radio-button>
+                <mat-radio-button type="radio" name="filter" value="EN" (click)="getBooksByEnglishLanguage()">English</mat-radio-button>
+                <mat-radio-button type="radio" name="filter" value="FR" (click)="getBooksByFranceLanguage()">France</mat-radio-button>
+                <mat-radio-button type="radio" name="filter" value="AR" (click)="getBooksByArabicLanguage()">Arabic</mat-radio-button>
                 <br>
               </mat-radio-group>
             </p>
       
             <br>
 
-            <h4>Language</h4>
+            <!-- <h4>Language</h4>
             <mat-form-field appearance="fill">
                 <mat-label>Language</mat-label>
                 <mat-select>
@@ -31,7 +31,7 @@
                     {{l.viewValue}}
                 </mat-option>
                 </mat-select>
-            </mat-form-field>
+            </mat-form-field> -->
       
           </mat-card-content>
         </mat-card>
@@ -45,10 +45,48 @@
           <mat-card-header>
             <mat-card-title>Found Books:</mat-card-title>
           </mat-card-header>
+
+          <tr id="test"  *ngFor="let book of books">
+            
+            <div *ngIf="foundDataRadio() == 'EN'" >
+              <td class="font-italic"> 
+                <mat-icon> insert_photo </mat-icon>
+                {{book.bookName}} - {{book.authorName}} <br>
+                Brief describtion: {{book.describtion}}
+                <br>
+                <br>
+                <mat-divider></mat-divider>
+                <br>
+              </td>
+            </div>
+
+            <div *ngIf="foundDataRadio() == 'AR'" >
+              <td class="font-italic"> 
+                <mat-icon> insert_photo </mat-icon>
+                {{book.bookName}} - {{book.authorName}} <br>
+                Brief describtion: {{book.describtion}}
+                <br>
+                <br>
+                <mat-divider></mat-divider>
+                <br>
+              </td>
+            </div>
+
+            <div *ngIf="foundDataRadio() == 'FR'" >
+              <td class="font-italic"> 
+                <mat-icon> insert_photo </mat-icon>
+                {{book.bookName}} - {{book.authorName}} <br>
+                Brief describtion: {{book.describtion}}
+                <br>
+                <br>
+                <mat-divider></mat-divider>
+                <br>
+              </td>
+            </div>
+
+          </tr>
   
           <mat-card-content>
-            
-  
           </mat-card-content>
   
         </mat-card> 
