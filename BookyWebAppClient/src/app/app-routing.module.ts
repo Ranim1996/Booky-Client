@@ -1,3 +1,4 @@
+import { FilterUsersComponent } from './filter-users/filter-users.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { BookPostsComponent } from './book-posts/book-posts.component';
 import { NgModule } from '@angular/core';
@@ -6,7 +7,7 @@ import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   {
-    path: 'booky/users/:id', 
+    path: 'booky/users/:id/profile', 
     component: ProfileComponent
   },
   {
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'booky/users/:id/homePage', 
     component: HomePageComponent
+  },
+  {
+    path: 'booky/books/filter', 
+    component: FilterUsersComponent
   },
 ]
 

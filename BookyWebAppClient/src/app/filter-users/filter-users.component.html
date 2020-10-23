@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row">
+      
+      <div class="col-sm">
+        <mat-card class="filter-card">
+          <mat-card-header>
+            <mat-card-title>Filter Users:</mat-card-title>
+          </mat-card-header>
+      
+          <mat-card-content>
+      
+            <p>
+              <mat-radio-group aria-label="Select an option">
+                <br>
+                <label>Book Type:</label>
+                <br>
+                <mat-radio-button type="radio" name="filter" value="Student" (click)="getBooksByFantasyType()" ngModel>Fantasy</mat-radio-button>
+                <mat-radio-button value="Classics">Classics</mat-radio-button>
+                <mat-radio-button value="Romantic">Romantic</mat-radio-button>
+                <br>
+              </mat-radio-group>
+            </p>
+      
+            <br>
+
+            <h4>Language</h4>
+            <mat-form-field appearance="fill">
+                <mat-label>Language</mat-label>
+                <mat-select>
+                <mat-option *ngFor="let l of languages" [value]="l.value">
+                    {{l.viewValue}}
+                </mat-option>
+                </mat-select>
+            </mat-form-field>
+      
+          </mat-card-content>
+        </mat-card>
+      </div>
+  
+  
+      <!-- FOUND USERS -->
+      <div class="col-sm">
+        <mat-card class="found-card">
+  
+          <mat-card-header>
+            <mat-card-title>Found Books:</mat-card-title>
+          </mat-card-header>
+  
+          <mat-card-content>
+            
+  
+          </mat-card-content>
+  
+        </mat-card> 
+      </div>
+  
+    </div>
+  </div>
+  

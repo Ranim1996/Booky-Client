@@ -63,6 +63,7 @@ import { UpdatePersonalInformationComponent } from './update-personal-informatio
 import { BookPostsComponent } from './book-posts/book-posts.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { DeletePostComponent } from './delete-post/delete-post.component';
+import { FilterUsersComponent } from './filter-users/filter-users.component';
 
 @NgModule({
   declarations: [
@@ -72,7 +73,8 @@ import { DeletePostComponent } from './delete-post/delete-post.component';
     UpdatePersonalInformationComponent,
     BookPostsComponent,
     HomePageComponent,
-    DeletePostComponent
+    DeletePostComponent,
+    FilterUsersComponent
   ],
   imports: [
     BrowserModule,
