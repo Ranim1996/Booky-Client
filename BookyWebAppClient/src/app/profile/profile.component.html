@@ -9,87 +9,113 @@
 
     </div>
 
+    <form (ngSubmit)="update()">
 
-    <div class="container p-3 my-3 border">
+        <div class="container p-3 my-3 border">
 
-        <div class="intro">
-            <h1>Personal Information:</h1>
+            <div class="intro">
+                <h1>Personal Information:</h1>
+            </div>
+     
+            <div class="myPage">
+            
+                <table class="table table-striped">
+                    
+                    <tbody>
+    
+                    <!-- <tr id="test"  *ngFor="let u of users"> -->
+                        <!-- matInput -->
+    
+                        <mat-form-field class="example-full-width">
+                            <mat-label>First name:</mat-label>
+                            <input type="text" class="form-control" id="firstName"
+                            required
+                            [(ngModel)]="user.firstName" name="firstName"
+                            #firstName="ngModel">
+                        </mat-form-field>
+    
+                        <br>
+    
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Last name:</mat-label>
+                            <input type="text" class="form-control" id="lastName"
+                            required
+                            [(ngModel)]="user.lastName" name="lastName"
+                            #lastName="ngModel">
+                        </mat-form-field>
+    
+                        <br>
+    
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Email:</mat-label>
+                            <input type="text" class="form-control" id="email"
+                            required
+                            [(ngModel)]="user.email" name="email"
+                            #email="ngModel">
+                        </mat-form-field>
+    
+                        <br>
+    
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Password:</mat-label>
+                            <input type="text" class="form-control" id="Password"
+                            required
+                            [(ngModel)]="user.password" name="Password"
+                            #password="ngModel">                        
+                        </mat-form-field>
+
+                        <br>
+    
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Phone number:</mat-label>
+                            <input type="text" class="form-control" id="phoneNumber"
+                            required
+                            [(ngModel)]="user.phoneNumber" name="phoneNumber"
+                            #phoneNumber="ngModel">                        
+                        </mat-form-field>
+    
+                        <br>
+    
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Language:</mat-label>
+                            <input type="text" class="form-control" id="language"
+                            required
+                            [(ngModel)]="user.language.name" name="language"
+                            #language="ngModel">  
+                        </mat-form-field>
+                    
+                        <br>
+    
+                        <mat-form-field class="example-full-width">
+                            <mat-label>Country:</mat-label>
+                            <input type="text" class="form-control" id="country"
+                            required
+                            [(ngModel)]="user.country.name" name="country"
+                            #country="ngModel">  
+                        </mat-form-field>
+    
+                    <!-- </tr> -->
+    
+                        <br>
+    
+                        <div class="example-button-container">
+                            <button class="float-right" mat-mini-fab aria-label="Example icon button with a save alt icon" >
+                                <mat-icon matTooltip="Save Changes" type="submit" >save_alt</mat-icon>
+                            </button>
+                        </div>
+    
+                        <br>
+                    
+                    </tbody>
+    
+                </table>
+    
+            </div>
+            
+    
         </div>
- 
-        <div class="myPage">
-        
-            <table class="table table-striped">
-                
-                <tbody>
 
-                <!-- <tr id="test"  *ngFor="let u of users"> -->
 
-                    <mat-form-field class="example-full-width">
-                        <mat-label>First name:</mat-label>
-                        <input matInput value="{{user.firstName}}">
-                    </mat-form-field>
-
-                    <br>
-
-                    <mat-form-field class="example-full-width">
-                        <mat-label>Last name:</mat-label>
-                        <input matInput value="{{user.lastName}}">
-                    </mat-form-field>
-
-                    <br>
-
-                    <mat-form-field class="example-full-width">
-                        <mat-label>Email:</mat-label>
-                        <input matInput value="{{user.email}}">
-                    </mat-form-field>
-
-                    <br>
-
-                    <mat-form-field class="example-full-width">
-                        <mat-label>Password:</mat-label>
-                        <input matInput value="{{user.password}}">
-                    </mat-form-field>
-
-                    <br>
-
-                    <mat-form-field class="example-full-width">
-                        <mat-label>Phone number:</mat-label>
-                        <input matInput value="{{user.phoneNumbar}}">
-                    </mat-form-field>
-
-                    <br>
-
-                    <mat-form-field class="example-full-width">
-                        <mat-label>Language:</mat-label>
-                        <input matInput value="{{user.language.name}}">
-                    </mat-form-field>
-                
-                    <br>
-
-                    <mat-form-field class="example-full-width">
-                        <mat-label>Country:</mat-label>
-                        <input matInput value="{{user.country.name}}">
-                    </mat-form-field>
-
-                <!-- </tr> -->
-
-                    <br>
-
-                    <div class="example-button-container">
-                        <button class="float-right" mat-mini-fab aria-label="Example icon button with a save alt icon" >
-                            <mat-icon matTooltip="Save Changes" (click)="openDialog(user)" >save_alt</mat-icon>
-                        </button>
-                    </div>
-
-                    <br>
-                
-                </tbody>
-
-            </table>
-
-        </div>
-        
-
-    </div>
+    </form>
 
 </div>

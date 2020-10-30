@@ -1,4 +1,4 @@
-import { Users } from './../classes/Profile/Users';
+import { Users } from 'src/app/classes/Profile/Users';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ProfileService } from '../services/Profile/profile.service';
@@ -11,6 +11,7 @@ import { ProfileService } from '../services/Profile/profile.service';
 export class UpdatePersonalInformationComponent implements OnInit {
 
   loggedInUser: number = 1;
+
 
   constructor(
     private profileService: ProfileService,
@@ -28,11 +29,15 @@ export class UpdatePersonalInformationComponent implements OnInit {
   }
 
   //update personal data
-  updateData() {
-    this.profileService.updateUserInformation(this.data.Users, this.loggedInUser).subscribe();
+  // updateData() {
+  //   this.profileService.updateUserInformation(this.data.user.id, this.data.user).subscribe(
+  //     data => {
+  //       console.log(this.data.user);
+  //     }
+  //   );
 
-    // Close dialog
-    this.dialogRef.close();
-  }
+  //   // Close dialog
+  //   this.dialogRef.close();
+  // }
 
 }

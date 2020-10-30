@@ -1,3 +1,4 @@
+import { Users } from 'src/app/classes/Profile/Users';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
@@ -140,6 +141,7 @@ import { FilterUsersComponent } from './filter-users/filter-users.component';
     ],
   providers: [
     FormsModule,
+    Users,
     
   ],
   bootstrap: [AppComponent]

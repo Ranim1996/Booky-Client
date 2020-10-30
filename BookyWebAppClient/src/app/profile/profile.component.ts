@@ -1,12 +1,13 @@
+import { Users } from 'src/app/classes/Profile/Users';
 import { UpdatePersonalInformationComponent } from './../update-personal-information/update-personal-information.component';
 import { Country } from './../classes/Profile/Country';
 import { Language } from './../classes/Profile/Language';
 import { ProfileService } from './../services/Profile/profile.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Users } from '../classes/Profile/Users';
 import { UserType } from '../classes/Profile/UserType';
 import { MatDialog } from '@angular/material/dialog';
+import { THIS_EXPR, ThrowStmt } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-profile',
@@ -18,18 +19,21 @@ export class ProfileComponent implements OnInit {
   //fields
   loggedInUser: number = 1;
   notification= null;
-  users: Users[];
+  users: Users[] = [];
 
-  arabic = new Language ("AR", "Arabic");
-  syria = new Country ("SY", "Syria");
-  user = new Users(1, "Ranim", "Alayoubi", "06/06/1996" , UserType.Admin, "ranim@gmail.com",
-  "password199","0684567447", this.syria, this.arabic);
+  user: Users;
+  updated;
+
+ 
 
 
   //constracture
   constructor(private profileService: ProfileService,
               private route: ActivatedRoute,
-              public dialog: MatDialog) { }
+              public dialog: MatDialog) 
+              {
+                  
+              }
 
 
   //methods
@@ -45,11 +49,12 @@ export class ProfileComponent implements OnInit {
     //   console.log(data);
     // this.user = <Users>data;
     // });
-
+    
     this.profileService.getUserById(this.loggedInUser).subscribe((data)=>{
-     this.users = <Users[]>data;
-     console.log(this.users);
-    });
+      this.user = <Users>data;
+      console.log(this.user);
+     });
+    
 
   }
 
@@ -64,17 +69,25 @@ export class ProfileComponent implements OnInit {
   }
 
   //open dialog for updating data
-  openDialog(user: Users): void {
-    console.log(user);
-    const dialogRef = this.dialog.open(UpdatePersonalInformationComponent, {
-      maxWidth: '50%',
-      data: {user: user}
-    }); 
-    dialogRef.afterClosed()
-      .subscribe(res => {
-        this.getUserInformation();  
-    });
+  // openDialog(user: Users): void {
+  //   console.log(user);
+  //   const dialogRef = this.dialog.open(UpdatePersonalInformationComponent, {
+  //     maxWidth: '50%',
+  //     data: {user: user}
+  //   }); 
+  //   dialogRef.afterClosed()
+  //     .subscribe(res => {
+  //       this.getUserInformation();  
+  //   });
 
+  // }
+
+  update(){
+   this.profileService.updateUserInformation(1, this.user).subscribe(
+      (res: Users) => {
+        this.updated = res;
+        console.log("updated");
+      });
   }
 
 
