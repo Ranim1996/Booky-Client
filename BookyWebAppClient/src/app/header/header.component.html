@@ -2,7 +2,8 @@
 <mdb-navbar class="customNav" SideClass="navbar navbar-expand-lg navbar-dark" [containerInside]="false">
 
   <!-- Navbar brand -->
-  <mdb-navbar-brand><a class="navbar-brand" href="#">Booky</a></mdb-navbar-brand>
+  <mdb-navbar-brand><a class="navbar-brand" href="#" [routerLink]="['/booky','users', 1, 'homePage']" mdbWavesEffect>
+    Booky</a></mdb-navbar-brand>
 
   <!-- Collapsible content -->
   <links>
@@ -15,7 +16,7 @@
         mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link waves-light" href="#" mdbWavesEffect>Post</a>
+        <a class="nav-link waves-light" href="#" [routerLink]="['/booky','users', 1, 'posts']"mdbWavesEffect>Post</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link waves-light" href="#" mdbWavesEffect>Majority</a>
@@ -27,11 +28,12 @@
     <ul class="navbar-nav ml-auto nav-flex-icons">
 
       <!-- Search box -->
-      <form class="form-inline waves-light" mdbWavesEffect>
+      <!-- <form class="form-inline waves-light" mdbWavesEffect>
         <div class="md-form my-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search">
         </div>
-      </form>
+      </form> -->
+      
       <button mat-mini-fab aria-label="Example icon button with a filter alt icon" [routerLink]="['/booky','books','filter']">
         <mat-icon>filter_alt</mat-icon>
       </button>

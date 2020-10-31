@@ -1,25 +1,71 @@
 <mat-card class="example-card">
 
-  <mat-card-header>
-
-    <mat-card-title><mat-icon> account_circle </mat-icon> Booky Admin</mat-card-title>
-    
-  </mat-card-header>
+  <mat-card-header></mat-card-header>
 
   <mat-card-content> 
-      <p>
-          The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-          A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-          bred for hunting.
-      </p>
+
+      <form  class="text-center border-silver">
+
+        <mat-form-field class="input-full-width">
+          <input matInput type="text" name="book" ngModel placeholder="Book" > 
+        </mat-form-field>
+  
+        <br>
+        <br>
+  
+        <mat-form-field class="input-full-width">
+          <input matInput type="text" name="author" ngModel placeholder="Author" > 
+        </mat-form-field>
+  
+        <br>
+        <br>
+  
+        <mat-form-field class="input-full-width">     
+          <mat-select name="employementType" ngModel>
+              <mat-option value="" disabled>Book Type </mat-option>
+              <mat-option *ngFor = "let b of bookTypes" [value]="b.name">
+                  {{b.name}}
+              </mat-option>
+          </mat-select>
+        </mat-form-field> 
+  
+        <br>
+        <br>
+  
+        <mat-form-field class="input-full-width">     
+          <mat-select name="employementType" ngModel>
+              <mat-option value="" disabled>Book Language </mat-option>
+              <mat-option *ngFor = "let l of languages" [value]="l.value">
+                  {{l.viewValue}}
+              </mat-option>
+          </mat-select>
+        </mat-form-field> 
+      
+        <br>
+        <br>
+  
+        <label for="desc">Book description</label>
+        <br>
+        <textarea id="desc" name="desc" rows="4" cols="50" placeholder="About book...." ngModel></textarea>
+  
+        <br>
+        <br>
+        <br>
+  
+        <div class="example-button-container">
+          <button class="float-right" type="submit"
+          mat-mini-fab aria-label="Example icon button with a send icon" (onclick)="addBook()" href="#"
+          [routerLink]="['/booky','users', 1, 'homePage']"mdbWavesEffect><mat-icon> send </mat-icon></button>
+        </div>
+  
+        <br>
+
+      </form>
+    
   </mat-card-content>
 
   <mat-card-actions>
-
-      <button mat-mini-fab aria-label="Example icon button with a favorite icon" href="#"><mat-icon> favorite </mat-icon></button>
       
-      <button mat-mini-fab aria-label="Example icon button with a delete icon" href="#"><mat-icon> delete </mat-icon></button>
-
   </mat-card-actions>
   
 </mat-card>

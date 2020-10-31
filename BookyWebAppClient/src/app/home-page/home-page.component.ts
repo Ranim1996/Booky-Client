@@ -1,9 +1,9 @@
-import { PostService } from './../services/Post/post.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { Book } from '../classes/Book';
 import { DeletePostComponent } from '../delete-post/delete-post.component';
+import { PostBookService } from '../services/Post/post-book.service';
 
 @Component({
   selector: 'app-home-page',
@@ -16,7 +16,7 @@ export class HomePageComponent implements OnInit {
     books: Book[];
     
     //constracture
-    constructor(private postService: PostService,
+    constructor(private postService: PostBookService,
       private route: ActivatedRoute,
       public dialog: MatDialog) { }
 

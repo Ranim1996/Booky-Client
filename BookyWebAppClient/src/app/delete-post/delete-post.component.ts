@@ -1,6 +1,6 @@
-import { PostService } from './../services/Post/post.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { PostBookService } from '../services/Post/post-book.service';
 
 @Component({
   selector: 'app-delete-post',
@@ -11,7 +11,7 @@ export class DeletePostComponent implements OnInit {
 
 
   constructor(
-    private postService: PostService,
+    private postService: PostBookService,
     public dialogRef: MatDialogRef<DeletePostComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
       console.log(data);
@@ -22,7 +22,7 @@ export class DeletePostComponent implements OnInit {
 
   //delete post
   deletePost(){
-    this.postService.deletePost(1).subscribe();
+    this.postService.deletePost(this.data.book.id).subscribe();
     console.log(this.data.book.id);
 
     // Close dialog

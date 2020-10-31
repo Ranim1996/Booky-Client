@@ -32,5 +32,4 @@ export class ProfileService {
   return this.httpClient.put(url, user);
   }
 
-
 }

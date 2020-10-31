@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class PostService {
+export class PostBookService {
 
   constructor(private httpClient: HttpClient) { }
 
@@ -23,5 +23,5 @@ export class PostService {
     return this.httpClient.delete('http://localhost:9090/booky/books/' + bookId);
   }
 
-
+  
 }
