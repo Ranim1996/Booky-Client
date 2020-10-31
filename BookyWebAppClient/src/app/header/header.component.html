@@ -11,7 +11,8 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link waves-light" href="/" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+        <a class="nav-link waves-light" href="/" [routerLink]="['/booky','users', 1, 'homePage']"
+        mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item" routerLinkActive="active">
         <a class="nav-link waves-light" href="#" mdbWavesEffect>Post</a>
@@ -31,17 +32,17 @@
           <input class="form-control mr-sm-2" type="text" placeholder="Search">
         </div>
       </form>
-      <button mat-mini-fab aria-label="Example icon button with a filter alt icon">
+      <button mat-mini-fab aria-label="Example icon button with a filter alt icon" [routerLink]="['/booky','books','filter']">
         <mat-icon>filter_alt</mat-icon>
       </button>
 
       <!-- Dropdown -->
       <li class="nav-item dropdown" dropdown>
-        <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+        <a dropdownToggle type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
           Account<span class="caret"></span></a>
 
         <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-          <a class="dropdown-item waves-light" mdbWavesEffect href="">Profile</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect href="" [routerLink]="['/booky','users', 1 , 'profile']">Profile</a>
           <a class="dropdown-item waves-light" mdbWavesEffect href="#" >Log out</a>
         </div>
 
