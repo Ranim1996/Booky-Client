@@ -39,20 +39,45 @@ export class BookPostsComponent implements OnInit {
 
   book: Book;
 
-  addBook(){
+  // addBook(){
+
+  //   console.log("hi");
+  //   this.bookToAdd = {
+  //     "bookName": this.book.bookName,
+  //     "authorName": this.book.authorName,
+  //     "bookType": this.book.bookType,
+  //     "describtion": this.book.describtion,
+  //     "language": this.book.language.name
+  //     }
+
+  //     this.postService.createPost(<JSON>this.bookToAdd);
+  //     console.log(this.bookToAdd);
+ 
+  // }
+
+  onSubmitBook(book){
 
     console.log("hi");
+
     this.bookToAdd = {
-      "bookName": this.book.bookName,
-      "authorName": this.book.authorName,
-      "bookType": this.book.bookType,
-      "describtion": this.book.describtion,
-      "language": this.book.language.name
-      }
+        "authorName": book.author,
+        "bookName": book.name,
+        "describtion": book.desc,
+        "language": {
+            "code":  book.language,
+            "name": book.language
+        },
+        "time": "2020-11-01",
+        "type": book.bookType
+    }
 
       this.postService.createPost(<JSON>this.bookToAdd);
       console.log(this.bookToAdd);
- 
+
   }
+
+  // test(){
+  //   console.log("hi");
+  // }
 
 }

@@ -4,10 +4,10 @@
 
   <mat-card-content> 
 
-      <form  class="text-center border-silver">
+      <form  class="text-center border-silver" #book="ngForm" (ngSubmit)="onSubmitBook(book.value)">
 
         <mat-form-field class="input-full-width">
-          <input matInput type="text" name="book" ngModel placeholder="Book" > 
+          <input matInput type="text" name="name" ngModel placeholder="Book" > 
         </mat-form-field>
   
         <br>
@@ -21,7 +21,7 @@
         <br>
   
         <mat-form-field class="input-full-width">     
-          <mat-select name="employementType" ngModel>
+          <mat-select name="bookType" ngModel>
               <mat-option value="" disabled>Book Type </mat-option>
               <mat-option *ngFor = "let b of bookTypes" [value]="b.name">
                   {{b.name}}
@@ -33,7 +33,7 @@
         <br>
   
         <mat-form-field class="input-full-width">     
-          <mat-select name="employementType" ngModel>
+          <mat-select name="language" ngModel>
               <mat-option value="" disabled>Book Language </mat-option>
               <mat-option *ngFor = "let l of languages" [value]="l.value">
                   {{l.viewValue}}
@@ -53,12 +53,17 @@
         <br>
   
         <div class="example-button-container">
-          <button class="float-right" type="submit"
-          mat-mini-fab aria-label="Example icon button with a send icon" (onclick)="addBook()" href="#"
-          [routerLink]="['/booky','users', 1, 'homePage']"mdbWavesEffect><mat-icon> send </mat-icon></button>
+          <button class="float-right" type="submit" id="submitButton"><mat-icon> send </mat-icon></button>
         </div>
+
+        <!-- <button (click)="test()"> test</button> -->
   
         <br>
+
+        
+          
+        <!-- [routerLink]="['/booky','users', 1, 'homePage']"mdbWavesEffect -->
+        <!-- mat-mini-fab aria-label="Example icon button with a send icon" href="#" -->
 
       </form>
     
