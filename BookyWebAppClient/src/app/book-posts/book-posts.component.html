@@ -7,7 +7,7 @@
       <form  class="text-center border-silver" #book="ngForm" (ngSubmit)="onSubmitBook(book.value)">
 
         <mat-form-field class="input-full-width">
-          <input matInput type="text" name="name" ngModel placeholder="Book" > 
+          <input matInput type="text" name="bookName" ngModel placeholder="Book" > 
         </mat-form-field>
   
         <br>
@@ -35,7 +35,7 @@
         <mat-form-field class="input-full-width">     
           <mat-select name="language" ngModel>
               <mat-option value="" disabled>Book Language </mat-option>
-              <mat-option *ngFor = "let l of languages" [value]="l.value">
+              <mat-option *ngFor = "let l of languages" [value]="l.viewValue">
                   {{l.viewValue}}
               </mat-option>
           </mat-select>
@@ -53,10 +53,9 @@
         <br>
   
         <div class="example-button-container">
-          <button class="float-right" type="submit" id="submitButton"><mat-icon> send </mat-icon></button>
+          <button class="float-right" type="submit" id="submitButton" mat-icon-button ria-label=""><mat-icon> 
+            send </mat-icon></button>
         </div>
-
-        <!-- <button (click)="test()"> test</button> -->
   
         <br>
 

@@ -61,13 +61,13 @@ export class BookPostsComponent implements OnInit {
 
     this.bookToAdd = {
         "authorName": book.author,
-        "bookName": book.name,
+        "bookName": book.bookName,
         "describtion": book.desc,
         "language": {
-            "code":  book.language,
+            // "code":  book.language,
             "name": book.language
         },
-        "time": "2020-11-01",
+        // "time": "2020-11-01",
         "type": book.bookType
     }
 
