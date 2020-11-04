@@ -19,8 +19,17 @@ export class PostBookService {
      
    }
 
-   public deletePost(bookId){
+  public deletePost(bookId){
     return this.httpClient.delete('http://localhost:9090/booky/books/' + bookId);
+  }
+
+  public getBookById(id){ 
+    return this.httpClient.get("http://localhost:9090/booky/books/" + id);
+  }
+
+  public updatePost(id, book) {
+    const url = 'http://localhost:9090/booky/books/' + id;
+    return this.httpClient.put(url, book);
   }
 
   

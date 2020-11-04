@@ -1,3 +1,4 @@
+import { UpdatePostComponent } from './../update-post/update-post.component';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
@@ -37,10 +38,24 @@ export class HomePageComponent implements OnInit {
     )
   }
 
-  //open dialog
-  openDialog(book: Book): void {
+  //open dialog to delete
+  openDialogDelete(book: Book): void {
     console.log(book);
     const dialogRef = this.dialog.open(DeletePostComponent, {
+      maxWidth: '50%',
+      data: {book: book}
+    }); 
+    dialogRef.afterClosed()
+      .subscribe(res => {
+        this.getAllPosts();  
+    });
+
+  }
+
+  //open dialog to delete
+  openDialogUpdate(book: Book): void {
+    console.log(book);
+    const dialogRef = this.dialog.open(UpdatePostComponent, {
       maxWidth: '50%',
       data: {book: book}
     }); 

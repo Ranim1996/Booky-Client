@@ -7,12 +7,12 @@ export class Users{
   id: number;
   firstName: String;
   lastName: String;
-  type: UserType
+  userType: UserType
   email: String;
   password: String;
   phoneNumber: String;
-  country: Country;
-  language: Language;
+  country_code: Country;
+  language_code: Language;
   dateOfBirth: String;
 
   // //constractures

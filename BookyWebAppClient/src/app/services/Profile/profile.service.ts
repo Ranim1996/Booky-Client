@@ -28,8 +28,8 @@ export class ProfileService {
   }
 
   public updateUserInformation(id, user) { //update user information by id 
-  const url = 'http://localhost:9090/booky/users/' + id;
-  return this.httpClient.put(url, user);
+    const url = 'http://localhost:9090/booky/users/' + id;
+    return this.httpClient.put(url, user);
   }
 
 }

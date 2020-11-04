@@ -18,7 +18,7 @@ export class Book{
         public bookType: BookType,
         public describtion: String,
         public time: Date,
-        public language: Language,
+        public language_code: Language,
     )
     {}
 

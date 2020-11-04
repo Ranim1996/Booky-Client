@@ -7,14 +7,14 @@
       <form  class="text-center border-silver" #book="ngForm" (ngSubmit)="onSubmitBook(book.value)">
 
         <mat-form-field class="input-full-width">
-          <input matInput type="text" name="bookName" ngModel placeholder="Book" > 
+          <input matInput type="text" name="bookName" ngModel placeholder="Book" required> 
         </mat-form-field>
   
         <br>
         <br>
   
         <mat-form-field class="input-full-width">
-          <input matInput type="text" name="author" ngModel placeholder="Author" > 
+          <input matInput type="text" name="author" ngModel placeholder="Author" required> 
         </mat-form-field>
   
         <br>

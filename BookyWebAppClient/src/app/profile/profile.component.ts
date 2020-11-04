@@ -38,17 +38,6 @@ export class ProfileComponent implements OnInit {
 
   //methods
   ngOnInit(): void {
-    // this.profileService.getUser().subscribe((data)=>{
-    //   console.log(data);
-    //  this.users = <User[]>data;
-    // });
-
-    // this.id = +this.route.snapshot.paramMap.get('id');
-    // this.profileService.getUserById('id')
-    // .subscribe((data)=>{
-    //   console.log(data);
-    // this.user = <Users>data;
-    // });
     
     this.profileService.getUserById(this.loggedInUser).subscribe((data)=>{
       this.user = <Users>data;
