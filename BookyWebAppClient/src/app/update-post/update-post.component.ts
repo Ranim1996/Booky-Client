@@ -1,3 +1,4 @@
+import { BookType } from './../classes/BookType';
 import { PostBookService } from './../services/Post/post-book.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
@@ -37,7 +38,10 @@ export class UpdatePostComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any) 
     { }
 
+  // myBook = new Book(1,"book","author",BookType.Classics,"Info .....", date, "EN");
+
   ngOnInit(): void {
+
     console.log(this.data.book.id);
     this.id = this.data.book.id;
     this.postService.getBookById(this.id)
@@ -50,7 +54,7 @@ export class UpdatePostComponent implements OnInit {
 
   updateBook(){
 
-    this.postService.updatePost(this.id, this.book).subscribe(
+    this.postService.updatePost(this.book.id, this.book).subscribe(
       (res: any) => {
         console.log("updated");
       });
