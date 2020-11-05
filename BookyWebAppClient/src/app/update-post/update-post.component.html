@@ -1,57 +1,69 @@
-<!-- <p>update-post works!</p>
-
 <mat-card class="example-card">
 
     <mat-card-header></mat-card-header>
   
-    <mat-card-content> 
-  
-        <form  class="text-center border-silver" (ngSubmit)="updateBook()">
+    <mat-card-content class="popup"> 
+
+        <form class="text-center border-silver" (ngSubmit)="updateBook()" #BookForm="ngForm">
             
+        <div class="col-md-12"><label class="labels">Book Name</label>
+            <br>
           <mat-form-field class="input-full-width">
-            <input matInput type="text" name="bookName" 
-            id="bookName" required
-            ngModel placeholder="Book"> 
+                <input type="text" class="form-control" id="bookName"
+                required
+                [(ngModel)]="book.bookName" name="bookName"
+                #bookName="ngModel">
           </mat-form-field>
+        </div>
     
+          <!-- <br> -->
           <br>
-          <br>
-    
+
+        <div class="col-md-12"><label class="labels">Author Name</label>
+            <br>
           <mat-form-field class="input-full-width">
-            <input matInput type="text" name="author" ngModel placeholder="Author" > 
+                    <input type="text" class="form-control" id="authorName"
+                    required
+                    [(ngModel)]="book.authorName" name="authorName"
+                    #authorName="ngModel">          
           </mat-form-field>
+        </div>
+    
+          <!-- <br> -->
+          <br>
+          
+        <div class="col-md-12"><label class="labels">Book type</label>
+            <select id="bookType" name="bookType" [(ngModel)]="book.bookType"
+            class="form-control">
+                <option *ngFor="let t of bookTypes" [value]="t.name">
+                    {{t.name}}
+                </option>
+            </select>
+        </div>
     
           <br>
           <br>
-    
-          <mat-form-field class="input-full-width">     
-            <mat-select name="bookType" ngModel>
-                <mat-option value="" disabled>Book Type </mat-option>
-                <mat-option *ngFor = "let b of bookTypes" [value]="b.name">
-                    {{b.name}}
-                </mat-option>
-            </mat-select>
-          </mat-form-field> 
-    
-          <br>
-          <br>
-    
-          <mat-form-field class="input-full-width">     
-            <mat-select name="language" ngModel>
-                <mat-option value="" disabled>Book Language </mat-option>
-                <mat-option *ngFor = "let l of languages" [value]="l.viewValue">
+
+        <div class="col-md-12"><label class="labels">Language</label>
+            <select id="language_code" name="language_code" [(ngModel)]="book.language_code.name"
+            class="form-control">
+                <option *ngFor="let l of languages" [value]="l.viewValue">
                     {{l.viewValue}}
-                </mat-option>
-            </mat-select>
-          </mat-form-field> 
+                </option>
+            </select>   
+        </div>
         
           <br>
           <br>
     
           <label for="desc">Book description</label>
           <br>
-          <textarea id="desc" name="desc" rows="4" cols="50" placeholder="About book...." ngModel></textarea>
-    
+          <textarea type="text" class="form-control" id="desc"
+            required
+            [(ngModel)]="book.describtion" name="desc"
+            #desc="ngModel">
+          </textarea>   
+
           <br>
           <br>
           <br>
@@ -72,15 +84,13 @@
     </mat-card-actions>
     
   </mat-card>
-   -->
+  
 
-<mat-card class="example-card">
+<!-- <mat-card class="example-card">
 
     <mat-card-header></mat-card-header>
   
     <mat-card-content> 
-
-        <!-- <div class="container h-100 d-flex justify-content-center"> -->
 
                 <form (ngSubmit)="updateBook()" #BookForm="ngForm">
                 
@@ -134,10 +144,8 @@
 
             </form>
 
-        <!-- </div> -->
-
     </mat-card-content>
   
     <mat-card-actions></mat-card-actions>
     
-</mat-card>
+</mat-card> -->
