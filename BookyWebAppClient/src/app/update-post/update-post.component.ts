@@ -56,7 +56,7 @@ export class UpdatePostComponent implements OnInit {
 
     this.postService.updatePost(this.book.id, this.book).subscribe(
       (res: any) => {
-        console.log("updated");
+        console.log(this.book.id + "updated");
       });
       this.dialogRef.close();
     }

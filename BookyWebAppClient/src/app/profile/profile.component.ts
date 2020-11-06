@@ -72,7 +72,7 @@ export class ProfileComponent implements OnInit {
   // }
 
   update(){
-   this.profileService.updateUserInformation(1, this.user).subscribe(
+   this.profileService.updateUserInformation(this.user.id, this.user).subscribe(
       (res: Users) => {
         this.updated = res;
         console.log("updated");
