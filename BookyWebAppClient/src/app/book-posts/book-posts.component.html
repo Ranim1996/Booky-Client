@@ -35,7 +35,7 @@
         <mat-form-field class="input-full-width">     
           <mat-select name="language" ngModel>
               <mat-option value="" disabled>Book Language </mat-option>
-              <mat-option *ngFor = "let l of languages" [value]="l.viewValue">
+              <mat-option *ngFor = "let l of languages" [value]="l.value">
                   {{l.viewValue}}
               </mat-option>
           </mat-select>

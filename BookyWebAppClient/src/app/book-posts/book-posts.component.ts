@@ -49,10 +49,10 @@ export class BookPostsComponent implements OnInit {
         "bookType": book.bookType,
         "describtion": book.desc,
         "language_code": {
-            // "code":  book.language,
+            "code":  book.language,
             "name": book.language
         },
-        // "time": "2020-11-01",
+        "time": "2020-11-01",
         
     }
 
