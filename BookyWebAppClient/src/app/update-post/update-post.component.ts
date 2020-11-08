@@ -44,19 +44,22 @@ export class UpdatePostComponent implements OnInit {
 
     console.log(this.data.book.id);
     this.id = this.data.book.id;
+    // console.log("test: " + this.data.book);
     this.postService.getBookById(this.id)
     .subscribe((data)=>{
-      console.log(data);
-      this.book = <Book>data;
+      // console.log("test: " + this.data.book);
+
+      this.book = <Book>this.data;
+      console.log(this.data);
     });
 
   }
 
   updateBook(){
 
-    this.postService.updatePost(this.book.id, this.book).subscribe(
+    this.postService.updatePost(this.data.book.id, this.data.book).subscribe(
       (res: any) => {
-        console.log(this.book.id + "updated");
+        console.log(this.data.book.id + "updated");
       });
       this.dialogRef.close();
     }

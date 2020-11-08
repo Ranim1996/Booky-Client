@@ -10,11 +10,12 @@
             <br>
           <mat-form-field class="input-full-width">
                 <input type="text" class="form-control" id="bookName"
-                required
-                [(ngModel)]="book.bookName" name="bookName"
+                required 
+                [(ngModel)]="this.data.book.bookName" name="bookName"
                 #bookName="ngModel">
           </mat-form-field>
         </div>
+
     
           <!-- <br> -->
           <br>
@@ -24,7 +25,7 @@
           <mat-form-field class="input-full-width">
                     <input type="text" class="form-control" id="authorName"
                     required
-                    [(ngModel)]="book.authorName" name="authorName"
+                    [(ngModel)]="this.data.book.authorName" name="authorName"
                     #authorName="ngModel">          
           </mat-form-field>
         </div>
@@ -33,7 +34,7 @@
           <br>
           
         <div class="col-md-12"><label class="labels">Book type</label>
-            <select id="bookType" name="bookType" [(ngModel)]="book.bookType"
+            <select id="bookType" name="bookType" [(ngModel)]="this.data.book.bookType"
             class="form-control">
                 <option *ngFor="let t of bookTypes" [value]="t.name">
                     {{t.name}}
@@ -45,7 +46,7 @@
           <br>
 
         <div class="col-md-12"><label class="labels">Language</label>
-            <select id="language_code" name="language_code" [(ngModel)]="book.language_code.name"
+            <select id="language_code" name="language_code" [(ngModel)]="this.data.book.language_code.name"
             class="form-control">
                 <option *ngFor="let l of languages" [value]="l.viewValue">
                     {{l.viewValue}}
@@ -60,7 +61,7 @@
           <br>
           <textarea type="text" class="form-control" id="desc"
             required
-            [(ngModel)]="book.describtion" name="desc"
+            [(ngModel)]="this.data.book.describtion" name="desc"
             #desc="ngModel">
           </textarea>   
 
