@@ -10,13 +10,16 @@
           <mat-card-content>
       
             <p>
-              <mat-radio-group aria-label="Select an option" ng-init="selectedUserType" [(ngModel)]="selectionLanguage" (ngModelChange)="foundDataByLanguage()">
+              <mat-radio-group aria-label="Select an option" ng-init="selectedUserType" [(ngModel)]="selectionLanguage" 
+              (change)="filterbooksByLAnguage()">
+              <!-- (ngModelChange)="foundDataByLanguage()"  -->
                 <br>
                 <label>Book Type:</label>
+                <!-- (click)="filterbooksByLAnguage()" -->
                 <br>
-                <mat-radio-button type="radio" name="filter" value="EN" (click)="getBooksByEnglishLanguage()">English</mat-radio-button>
-                <mat-radio-button type="radio" name="filter" value="FR" (click)="getBooksByFranceLanguage()">French</mat-radio-button>
-                <mat-radio-button type="radio" name="filter" value="AR" (click)="getBooksByArabicLanguage()">Arabic</mat-radio-button>
+                <mat-radio-button type="radio" name="filter" value="EN">English</mat-radio-button>
+                <mat-radio-button type="radio" name="filter" value="FR">French</mat-radio-button>
+                <mat-radio-button type="radio" name="filter" value="AR">Arabic</mat-radio-button>
                 <br>
               </mat-radio-group>
             </p>
@@ -48,7 +51,7 @@
 
           <tr id="bookId"  *ngFor="let book of books">
             
-            <div *ngIf="foundDataByLanguage() == 'EN'" >
+            <!-- <div *ngIf="foundDataByLanguage() == 'EN'" > -->
               <td class="font-italic"> 
                 <mat-icon> insert_photo </mat-icon>
                 {{book.bookName}} - {{book.authorName}} <br>
@@ -58,8 +61,8 @@
                 <mat-divider></mat-divider>
                 <br>
               </td>
-            </div>
-
+            <!-- </div> -->
+<!-- 
             <div *ngIf="foundDataByLanguage() == 'AR'" >
               <td class="font-italic"> 
                 <mat-icon> insert_photo </mat-icon>
@@ -82,9 +85,9 @@
                 <mat-divider></mat-divider>
                 <br>
               </td>
-            </div>
+            </div> -->
 
-            <div>
+            <!-- <div>
               <tr id="tests" *ngFor="let t of types">
 
                 <div *ngIf="foundDataByType() == 't.value'" >
@@ -97,10 +100,10 @@
                   <mat-divider></mat-divider>
                   <br>
                 </td>
-                </div>
+              </div>
 
               </tr>
-            </div>
+            </div> -->
 
           </tr>
   

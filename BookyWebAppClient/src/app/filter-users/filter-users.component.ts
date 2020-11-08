@@ -34,12 +34,26 @@ export class FilterUsersComponent implements OnInit {
   books: Book[]; 
   book: Book;
 
+
+  filterbooksByLAnguage(){
+    console.log(this.selectionLanguage);
+    this.filterService.filterBooksByLanguage(this.selectionLanguage).subscribe((data)=>
+    {
+      this.books = <Book[]>data;
+      console.log("filter by  language:" + this.books);
+    });
+  }
+
+
   getBooksByEnglishLanguage(){
+    console.log("IN ENGLISH FILTER");
     this.filterService.filterBooksByLanguage('EN').subscribe((data)=>
     {
       this.books=<Book[]>data;
-      console.log(this.books);      
+      console.log("filter by  language:");
+      // console.log(this.books);      
     });
+
   }
 
   getBooksByFranceLanguage(){
