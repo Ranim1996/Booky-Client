@@ -46,9 +46,9 @@
           <br>
 
         <div class="col-md-12"><label class="labels">Language</label>
-            <select id="language_code" name="language_code" [(ngModel)]="this.data.book.language_code.name"
+            <select id="language_code" name="language_code" [(ngModel)]="this.data.book.language_code.code"
             class="form-control">
-                <option *ngFor="let l of languages" [value]="l.viewValue">
+                <option *ngFor="let l of languages" [value]="l.value">
                     {{l.viewValue}}
                 </option>
             </select>   
