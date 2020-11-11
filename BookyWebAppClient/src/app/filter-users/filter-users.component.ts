@@ -63,6 +63,10 @@ export class FilterUsersComponent implements OnInit {
 
   }
 
+  ClearFilters(){
+    window.location.reload();
+  }
+
   foundDataByLanguage(){
     return this.selectionLanguage;
   }
