@@ -8,14 +8,13 @@
           </mat-card-header>
       
           <mat-card-content>
+
       
             <p>
-              <mat-radio-group aria-label="Select an option" ng-init="selectedUserType" [(ngModel)]="selectionLanguage" 
-              (change)="filterbooksByLAnguage()">
-              <!-- (ngModelChange)="foundDataByLanguage()"  -->
+              <mat-radio-group aria-label="Select an option" ng-init="books" [(ngModel)]="selectionLanguage" 
+              (ngModelChange)="filterbooksByLanguage()">
                 <br>
-                <label>Book Type:</label>
-                <!-- (click)="filterbooksByLAnguage()" -->
+                <label>Book Language:</label>
                 <br>
                 <mat-radio-button type="radio" name="filter" value="EN">English</mat-radio-button>
                 <mat-radio-button type="radio" name="filter" value="FR">French</mat-radio-button>
@@ -26,22 +25,44 @@
       
             <br>
 
-            <h4>Book type</h4>
+            <h4>Book type:</h4>
             <mat-form-field appearance="fill">
               <mat-label>Type</mat-label>
               <mat-select ng-model [(ngModel)]="SelectionType" (ngModelChange)="foundDataByType()">
-                <mat-option *ngFor="let t of types" name="filter" [value]="t.value" (click)="getBooksByBookType(t.value)">
+                <mat-option *ngFor="let t of types" name="filter" [value]="t.value" (click)="getBooksByBookType()">
                   {{t.viewValue}}
                 </mat-option>
               </mat-select>
             </mat-form-field>
-      
+
+            <br>
+
+            <button (click)="getBooksByTypeAndLanguage()">send</button>
+
+
+            <!-- <script>
+              angular.module('myFilters', []).
+              filter('filters', function () {
+                  return function (books) {
+                      var items = {
+                          out: []
+                      };
+                      angular.forEach(books, function (value, key) {
+                          if (this.genres[value.genre] === true) {
+                              this.out.push(value);
+                          }
+                      }, items);
+                      return items.out;
+                  };
+              });
+            </script> -->
+
           </mat-card-content>
         </mat-card>
       </div>
   
   
-      <!-- FOUND USERS -->
+      <!-- FOUND Books -->
       <div class="col-sm">
         <mat-card class="found-card">
   
@@ -51,7 +72,6 @@
 
           <tr id="bookId"  *ngFor="let book of books">
             
-            <!-- <div *ngIf="foundDataByLanguage() == 'EN'" > -->
               <td class="font-italic"> 
                 <mat-icon> insert_photo </mat-icon>
                 {{book.bookName}} - {{book.authorName}} <br>
@@ -61,49 +81,6 @@
                 <mat-divider></mat-divider>
                 <br>
               </td>
-            <!-- </div> -->
-<!-- 
-            <div *ngIf="foundDataByLanguage() == 'AR'" >
-              <td class="font-italic"> 
-                <mat-icon> insert_photo </mat-icon>
-                {{book.bookName}} - {{book.authorName}} <br>
-                Brief describtion: {{book.describtion}}
-                <br>
-                <br>
-                <mat-divider></mat-divider>
-                <br>
-              </td>
-            </div>
-
-            <div *ngIf="foundDataByLanguage() == 'FR'" >
-              <td class="font-italic"> 
-                <mat-icon> insert_photo </mat-icon>
-                {{book.bookName}} - {{book.authorName}} <br>
-                Brief describtion: {{book.describtion}}
-                <br>
-                <br>
-                <mat-divider></mat-divider>
-                <br>
-              </td>
-            </div> -->
-
-            <!-- <div>
-              <tr id="tests" *ngFor="let t of types">
-
-                <div *ngIf="foundDataByType() == 't.value'" >
-                  <td class="font-italic"> 
-                  <mat-icon> insert_photo </mat-icon>
-                  {{book.bookName}} - {{book.authorName}} <br>
-                  Brief describtion: {{book.describtion}}
-                  <br>
-                  <br>
-                  <mat-divider></mat-divider>
-                  <br>
-                </td>
-              </div>
-
-              </tr>
-            </div> -->
 
           </tr>
   

@@ -19,7 +19,7 @@ export class FilterUsersComponent implements OnInit {
     {value: 'Horror', viewValue: 'Horror'},
     {value: 'DetectiveandMystery', viewValue: 'DetectiveandMystery'},
     {value: 'LitraryFiction', viewValue: 'LitraryFiction'}
-  ];
+  ]; 
 
   constructor(private filterService: FilterService,
               private route: ActivatedRoute
@@ -31,53 +31,36 @@ export class FilterUsersComponent implements OnInit {
   selectionLanguage: String;
   SelectionType: String;
 
+
   books: Book[]; 
   book: Book;
 
 
-  filterbooksByLAnguage(){
+  filterbooksByLanguage(){
     console.log(this.selectionLanguage);
     this.filterService.filterBooksByLanguage(this.selectionLanguage).subscribe((data)=>
     {
       this.books = <Book[]>data;
-      console.log("filter by  language:" + this.books);
+      console.log("filter by language:" + this.books);
     });
   }
 
-
-  getBooksByEnglishLanguage(){
-    console.log("IN ENGLISH FILTER");
-    this.filterService.filterBooksByLanguage('EN').subscribe((data)=>
-    {
-      this.books=<Book[]>data;
-      console.log("filter by  language:");
-      // console.log(this.books);      
-    });
-
-  }
-
-  getBooksByFranceLanguage(){
-    this.filterService.filterBooksByLanguage('FR').subscribe((data)=>
+  getBooksByBookType(){
+    this.filterService.filterBooksByBookType(this.SelectionType).subscribe((data)=>
     {
       this.books=<Book[]>data;
       console.log(this.books);      
     });
   }
 
-  getBooksByArabicLanguage(){
-    this.filterService.filterBooksByLanguage('AR').subscribe((data)=>
+  getBooksByTypeAndLanguage(){
+    console.log("hi");
+    this.filterService.filterBooksByTypeAndLanguage(this.SelectionType, this.selectionLanguage).subscribe((data)=>
     {
-      this.books=<Book[]>data;
-      console.log(this.books);      
+      this.books = <Book[]>data;
+      console.log(this.books);
     });
-  }
 
-  getBooksByBookType(bookType){
-    this.filterService.filterBooksByBookType(bookType).subscribe((data)=>
-    {
-      this.books=<Book[]>data;
-      console.log(this.books);      
-    });
   }
 
   foundDataByLanguage(){

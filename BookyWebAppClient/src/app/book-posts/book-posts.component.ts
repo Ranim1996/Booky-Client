@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { PostBookService } from '../services/Post/post-book.service';
 import { Book } from '../classes/Book';
@@ -31,6 +31,7 @@ export class BookPostsComponent implements OnInit {
 
   constructor(private postService: PostBookService,
     private route: ActivatedRoute,
+    private router: Router,
     public dialog: MatDialog) 
     { }
 
@@ -58,6 +59,8 @@ export class BookPostsComponent implements OnInit {
 
       this.postService.createPost(<JSON>this.bookToAdd);
       console.log(this.bookToAdd);
+
+      // this.router.navigate([`http://localhost:4200/booky/users/1/homePage`], { relativeTo: this.route });
 
   }
 
