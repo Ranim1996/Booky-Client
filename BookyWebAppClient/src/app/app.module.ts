@@ -66,6 +66,8 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { DeletePostComponent } from './delete-post/delete-post.component';
 import { FilterUsersComponent } from './filter-users/filter-users.component';
 import { UpdatePostComponent } from './update-post/update-post.component';
+import { LogInComponent } from './log-in/log-in.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -77,7 +79,9 @@ import { UpdatePostComponent } from './update-post/update-post.component';
     HomePageComponent,
     DeletePostComponent,
     FilterUsersComponent,
-    UpdatePostComponent
+    UpdatePostComponent,
+    LogInComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

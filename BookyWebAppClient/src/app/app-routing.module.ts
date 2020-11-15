@@ -1,3 +1,5 @@
+import { RegisterComponent } from './register/register.component';
+import { LogInComponent } from './log-in/log-in.component';
 import { FilterUsersComponent } from './filter-users/filter-users.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { BookPostsComponent } from './book-posts/book-posts.component';
@@ -21,6 +23,14 @@ const routes: Routes = [
   {
     path: 'booky/books/filter', 
     component: FilterUsersComponent
+  },
+  {
+    path: 'booky/logIn', 
+    component: LogInComponent
+  },
+  {
+    path: 'booky/register', 
+    component: RegisterComponent
   },
 ]
 
