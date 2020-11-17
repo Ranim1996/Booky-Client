@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Booky Website Application';
+
+  readLocalStorageValue() {
+    return localStorage.getItem('userToken');
+  }
+  
+  userIsLogged(){
+    if(this.readLocalStorageValue() != null){
+    return true;
+    }else{
+    return false;
+    }
+  }
+
 }
