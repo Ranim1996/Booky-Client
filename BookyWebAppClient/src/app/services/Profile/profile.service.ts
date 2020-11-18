@@ -24,7 +24,7 @@ export class ProfileService {
   };
 
   
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) { } 
  
   public getUser(){ //get all users
     return this.httpClient.get("http://localhost:9090/booky/users/", this.httpOptions);
@@ -35,8 +35,8 @@ export class ProfileService {
   }
 
   public updateUserInformation(id, user) { //update user information by id 
-    const url = 'http://localhost:9090/booky/users/' + id + this.httpOptions;
-    return this.httpClient.put(url, user);
+    const url = 'http://localhost:9090/booky/users/' + id;
+    return this.httpClient.put(url, user, this.httpOptions);
   }
 
 }

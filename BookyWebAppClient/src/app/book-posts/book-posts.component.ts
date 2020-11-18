@@ -59,8 +59,7 @@ export class BookPostsComponent implements OnInit {
 
       this.postService.createPost(<JSON>this.bookToAdd);
       console.log(this.bookToAdd);
-
-      // this.router.navigate([`http://localhost:4200/booky/users/1/homePage`], { relativeTo: this.route });
+      this.router.navigate(['booky/homePage']);
 
   }
 

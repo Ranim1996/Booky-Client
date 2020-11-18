@@ -18,8 +18,6 @@ export class LogInComponent implements OnInit {
   isLoginError : boolean = false;
   user: Users;
 
-  // user = new Users(3, "0348348");
-
   constructor(private userService: UserService,
     private router: Router){}
 
@@ -27,33 +25,34 @@ export class LogInComponent implements OnInit {
 
     if(this.readLocalStorageValue() != null){
       this.loggedIn= true;
-      this.router.navigate(['/profile']);
+      this.router.navigate(['booky/profile']);
     }else{
       this.loggedIn = false;
-      
-    }
+    } 
 
   }
 
   OnSubmit(email,password){
+
     this.token = btoa(email+':'+password);
     this.userService.login(email, password)
     .subscribe(
       (res: any) => {
-        console.log(this.token);
+        console.log(this.token); 
         this.user = <Users>res;
-      localStorage.setItem('userToken', this.token);
-      localStorage.setItem('userId', this.user.id.toString());
-      
-      this.router.navigate(['/booky/profile']);
+        localStorage.setItem('userToken', this.token);
+        localStorage.setItem('userId', this.user.id.toString());
+        this.router.navigate(['booky/profile']);
+        console.log("Logged in: " + this.token);
       },
+      
       (error: Response) => {
         if(error.status === 404){
           console.log("not found");
           this.isLoginError = true;
         }
-        }
-  );
+      }
+    );
   }
 
   readLocalStorageValue() {

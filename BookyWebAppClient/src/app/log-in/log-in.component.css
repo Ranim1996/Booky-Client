@@ -9,7 +9,7 @@
         margin-top: auto;
         margin-bottom: auto;
         width: 400px;
-        background-color: rgb(240, 191, 241) !important;
+        background-color: rgb(253, 226, 235) !important;
     }
     
     .card-header h3{
@@ -18,28 +18,27 @@
     }
     
     input {
-        background-color:rgb(196, 149, 196);
+        background-color:white;
     }
 
     input[type=text] {
-        background-color:rgb(196, 149, 196);
-        color:white;
+        background-color:white;
+        color:black;
     }
 
     input[type=password] {
-        background-color:rgb(196, 149, 196);
-        color:white;
+        background-color:white;
+        color:black;
     }
 
     .card-body{
         margin-left: 70px;
-        margin-top: 10px;
+        margin-top: 50px;
     }
     
     input:focus{
         outline: 0 0 0 0  !important;
         box-shadow: 0 0 0 0 !important;
-    
     }
     
     
@@ -49,5 +48,13 @@
     
     .links a{
         margin-left: 4px;
+    }
+
+    .mat-flat-button.mat-accent, .mat-raised-button.mat-accent, .mat-fab.mat-accent, .mat-mini-fab.mat-accent {
+        background-color: white;
+    }
+    
+    .mat-flat-button.mat-accent, .mat-raised-button.mat-accent, .mat-fab.mat-accent, .mat-mini-fab.mat-accent {
+        color: palevioletred;
     }
     

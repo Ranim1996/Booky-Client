@@ -17,33 +17,33 @@ import { THIS_EXPR, ThrowStmt } from '@angular/compiler/src/output/output_ast';
 export class ProfileComponent implements OnInit {
 
   //fields
-  loggedInUser: number = 1;
   notification= null;
   users: Users[] = [];
 
   user: Users;
+  userId:number;
+  id: string;
+
   updated;
-
- 
-
 
   //constracture
   constructor(private profileService: ProfileService,
               private route: ActivatedRoute,
               public dialog: MatDialog) 
-              {
-                  
-              }
-
+              {}
 
   //methods
   ngOnInit(): void {
+
+    this.id = localStorage.getItem('userId'); 
+
+    console.log(this.id);
     
-    this.profileService.getUserById(this.loggedInUser).subscribe((data)=>{
+    this.profileService.getUserById(this.id).subscribe((data)=>{
       this.user = <Users>data;
       console.log(this.user);
      });
-    
+     
 
   }
 

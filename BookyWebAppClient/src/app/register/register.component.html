@@ -1,4 +1,4 @@
-<mat-card class="signUp">
+<!-- <mat-card class="signUp">
 
     <mat-card-header></mat-card-header>
 
@@ -8,56 +8,56 @@
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
             <div class="form-group">
-                <label for="firstName">First Name</label>
+                <label for="firstName">First Name</label> -->
                 <!-- [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" -->
-                <input type="text" formControlName="firstName" class="form-control" />
+                <!-- <input type="text" formControlName="firstName" class="form-control" /> -->
                 <!-- <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
                     <div *ngIf="f.firstName.errors.required">First Name is required</div>
                 </div> -->
-            </div>
+            <!-- </div>
 
             <div class="form-group">
-                <label for="lastName">Last Name</label>
+                <label for="lastName">Last Name</label> -->
                 <!-- [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" -->
-                <input type="text" formControlName="lastName" class="form-control" />
+                <!-- <input type="text" formControlName="lastName" class="form-control" /> -->
                 <!-- <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
                     <div *ngIf="f.lastName.errors.required">Last Name is required</div>
                 </div> -->
-            </div>
+            <!-- </div>
 
             <div class="form-group">
-                <label for="phone">Phone Number</label>
+                <label for="phone">Phone Number</label> -->
                 <!-- [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" -->
-                <input type="text" formControlName="phone" class="form-control" />
+                <!-- <input type="text" formControlName="phone" class="form-control" /> -->
                 <!-- <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
                     <div *ngIf="f.phone.errors.required">Phone number is required</div>
                 </div> -->
-            </div>
+            <!-- </div>
 
             <div class="form-group">
-                <label for="email">Email</label>
+                <label for="email">Email</label> -->
                 <!-- [ngClass]="{ 'is-invalid': submitted && f.email.errors }" -->
-                <input type="text" formControlName="email" class="form-control" />
+                <!-- <input type="text" formControlName="email" class="form-control" /> -->
                 <!-- <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
                     <div *ngIf="f.email.errors.required">Email is required</div>
                 </div> -->
-            </div>
-
+            <!-- </div> -->
+<!-- 
             <div class="form-group">
-                <label for="password">Password</label>
+                <label for="password">Password</label> -->
                 <!-- [ngClass]="{ 'is-invalid': submitted && f.password.errors }" -->
-                <input type="password" formControlName="password" class="form-control" />
+                <!-- <input type="password" formControlName="password" class="form-control" /> -->
                 <!-- <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
                     <div *ngIf="f.password.errors.required">Password is required</div>
                     <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
                 </div> -->
-            </div>
+            <!-- </div> -->
 
-            <div class="form-group"> 
+            <!-- <div class="form-group">  -->
                 <!-- [disabled]="loading" -->
-                <button class="btn btn-primary">
+                <!-- <button class="btn btn-primary"> -->
                     <!-- <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span> -->
-                    Sign-Up
+                    <!-- Sign-Up
                 </button>
                 <a routerLink="/login" class="btn btn-link">Cancel</a>
             </div>
@@ -65,6 +65,105 @@
 
     </mat-card-content>
 
-</mat-card>    
+</mat-card>    -->
+
+
+
+<mat-card class="example-card">
+
+    <mat-card-header></mat-card-header>
+  
+    <mat-card-content> 
+  
+        <form  class="text-center border-silver" #user="ngForm" (ngSubmit)="onSubmit(user.value)">
+  
+          <mat-form-field class="input-full-width">
+            <input matInput type="text" name="firstName" ngModel placeholder="First name" required> 
+          </mat-form-field>
+    
+          <br>
+          <br>
+
+          <mat-form-field class="input-full-width">
+            <input matInput type="text" name="lastName" ngModel placeholder="Last name" required> 
+          </mat-form-field>
+    
+          <br>
+          <br>
+
+          <mat-form-field class="input-full-width">
+            <input matInput type="text" name="email" ngModel placeholder="Email" required> 
+          </mat-form-field>
+    
+          <br>
+          <br>
+
+          <mat-form-field class="input-full-width">
+            <input matInput type="text" name="password" ngModel placeholder="Password" required> 
+          </mat-form-field>
+    
+          <br>
+          <br>
+    
+          <mat-form-field class="input-full-width">
+            <input matInput type="text" name="phoneNumber" ngModel placeholder="phone number" required> 
+          </mat-form-field>
+    
+          <br>
+          <br>
+
+          <mat-form-field class="input-full-width">
+            <input matInput type="text" name="dateOfBirth" ngModel placeholder="dd-mm-yyyy" required> 
+          </mat-form-field>
+    
+          <br>
+          <br>
+    
+          <mat-form-field class="input-full-width">     
+            <mat-select name="language" ngModel>
+                <mat-option value="" disabled>Language </mat-option>
+                <mat-option *ngFor = "let l of languages" [value]="l.value">
+                    {{l.viewValue}}
+                </mat-option>
+            </mat-select>
+          </mat-form-field> 
+        
+          <br>
+          <br>
+    
+          <mat-form-field class="input-full-width">     
+            <mat-select name="country" ngModel>
+                <mat-option value="" disabled>Country </mat-option>
+                <mat-option *ngFor = "let c of countries" [value]="c.value">
+                    {{c.viewValue}}
+                </mat-option>
+            </mat-select>
+          </mat-form-field> 
+        
+          <br>
+          <br>
+    
+          <div class="example-button-container">
+            <button class="float-right" type="submit" id="submitButton" mat-mini-fab aria-label="Example icon button with a how to reg icon">
+              <mat-icon> how_to_reg </mat-icon></button>
+          </div>
+    
+          <br>
+          <br>
+  
+        </form>
+
+            <div class="d-flex justify-content-center links">
+                Already have an account?<a href="#" [routerLink]="['/booky', 'logIn']">Sign In</a>
+            </div>
+      
+    </mat-card-content>
+  
+    <mat-card-actions>
+        
+    </mat-card-actions>
+    
+  </mat-card>
+  
 
 

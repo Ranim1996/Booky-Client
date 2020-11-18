@@ -41,8 +41,8 @@ export class PostBookService {
   }
 
   public updatePost(id, book) {
-    const url = 'http://localhost:9090/booky/books/' + id + this.httpOptions;
-    return this.httpClient.put(url, book);
+    const url = 'http://localhost:9090/booky/books/' + id;
+    return this.httpClient.put(url, book, this.httpOptions);
   }
 
   

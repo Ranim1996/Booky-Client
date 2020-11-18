@@ -20,15 +20,25 @@ const routes: Routes = [
     // canActivate: [ AuthenticationGuard ]
   },
   {
-    path: 'booky/users/:id/posts', 
+    path: 'booky/posts', 
     component: BookPostsComponent,
     // canActivate: [ AuthenticationGuard ]
   },
+  // {
+  //   path: 'booky/users/:id/posts', 
+  //   component: BookPostsComponent,
+  //   // canActivate: [ AuthenticationGuard ]
+  // },
   {
-    path: 'booky/users/:id/homePage', 
+    path: 'booky/homePage', 
     component: HomePageComponent,
     // canActivate: [ AuthenticationGuard ]
   },
+  // {
+  //   path: 'booky/users/:id/homePage', 
+  //   component: HomePageComponent,
+  //   // canActivate: [ AuthenticationGuard ]
+  // },
   {
     path: 'booky/books/filter', 
     component: FilterUsersComponent,

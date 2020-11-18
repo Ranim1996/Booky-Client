@@ -13,6 +13,7 @@ export class UserService {
       this.httpOptions.headers = this.httpOptions.headers.set('Authorization',  'Basic ' + localStorage.getItem("userToken"));
     };
   }
+  
   httpOptions = {
     headers: new HttpHeaders({
       'Content-Type': 'application/json'
@@ -21,13 +22,19 @@ export class UserService {
 
   
   login(email, password){
-   
     const body = email+":"+password;
-    return this.httpClient.post('http://localhost:9090/users/login', body, this.httpOptions);
+    return this.httpClient.post('http://localhost:9090/booky/users/login', body, this.httpOptions);
   }
  
   logout(){
      this.httpOptions.headers = this.httpOptions.headers.delete('Authorization');
+  }
+ 
+  public registerUser(data){
+    return this.httpClient.post('http://localhost:9090/booky/users/', data, this.httpOptions).toPromise().then(data => {
+      console.log(data);
+    });
+     
   }
   
 }
