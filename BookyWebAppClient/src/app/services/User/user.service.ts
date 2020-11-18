@@ -6,13 +6,21 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
 
-  constructor(private httpClient: HttpClient) {  this.readLocalStorageValue(); }
+  constructor(private httpClient: HttpClient) {   }
 
   readLocalStorageValue() {
-    if(localStorage.getItem("userToken") != null){
-      this.httpOptions.headers = this.httpOptions.headers.set('Authorization',  'Basic ' + localStorage.getItem("userToken"));
-    };
-  }
+    // if(localStorage.getItem("userToken") != null){
+      console.log("Read value function:" + localStorage.getItem("userToken") );
+      // this.httpOptions.headers = this.httpOptions.headers.set('Authorization',  'Basic ' + localStorage.getItem("userToken"));
+      this.httpOptions.headers.set('Authorization',  'Basic ' + localStorage.getItem("userToken"));
+
+    // }
+    // else{
+
+    //   console.log("LOcal storage is nul :(" + localStorage.getItem("userToken"));
+
+    // };
+  } 
   
   httpOptions = {
     headers: new HttpHeaders({
@@ -20,10 +28,25 @@ export class UserService {
     })
   };
 
-  
+  token: string;
+
   login(email, password){
     const body = email+":"+password;
-    return this.httpClient.post('http://localhost:9090/booky/users/login', body, this.httpOptions);
+
+    this.token = btoa(email+':'+password);
+    localStorage.setItem('userToken', this.token);
+
+    // this.readLocalStorageValue();
+    // console.log(this.httpOptions);
+
+    let httpOP = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization':  'Basic ' + localStorage.getItem("userToken")
+      })
+    };
+
+    return this.httpClient.post('http://localhost:9090/booky/users/login', body, httpOP);
   }
  
   logout(){

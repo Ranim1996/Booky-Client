@@ -37,11 +37,11 @@ export class ProfileComponent implements OnInit {
 
     this.id = localStorage.getItem('userId'); 
 
-    console.log(this.id);
+    console.log("id in profile: " + this.id);
     
     this.profileService.getUserById(this.id).subscribe((data)=>{
       this.user = <Users>data;
-      console.log(this.user);
+      console.log("profile: " + this.user);
      });
      
 
