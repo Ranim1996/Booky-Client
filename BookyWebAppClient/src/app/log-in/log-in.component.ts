@@ -34,19 +34,12 @@ export class LogInComponent implements OnInit {
 
   OnSubmit(email,password){
 
-    // this.token = btoa(email+':'+password);
-
-    // localStorage.setItem('userToken', this.token);
-
-    // console.log("localStorage: " + this.token);
-
     this.userService.login(email, password)
     .subscribe(
       (res: any) => {
         this.user = <Users>res;
         console.log(this.user);
         console.log(this.user.id);
-        // localStorage.setItem('userToken', this.token);
         localStorage.setItem('userId', this.user.id.toString());
         this.router.navigate(['booky/profile']);
       },

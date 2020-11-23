@@ -1,5 +1,4 @@
 import { Users } from 'src/app/classes/Profile/Users';
-import { UpdatePersonalInformationComponent } from './../update-personal-information/update-personal-information.component';
 import { Country } from './../classes/Profile/Country';
 import { Language } from './../classes/Profile/Language';
 import { ProfileService } from './../services/Profile/profile.service';
@@ -23,6 +22,7 @@ export class ProfileComponent implements OnInit {
   user: Users;
   userId:number;
   id: string;
+  type: string;
 
   updated;
 
@@ -40,6 +40,7 @@ export class ProfileComponent implements OnInit {
     console.log("id in profile: " + this.id);
     
     this.profileService.getUserById(this.id).subscribe((data)=>{
+      console.log(data);
       this.user = <Users>data;
       console.log("profile: " + this.user);
      });
@@ -56,20 +57,6 @@ export class ProfileComponent implements OnInit {
       }
     )
   }
-
-  //open dialog for updating data
-  // openDialog(user: Users): void {
-  //   console.log(user);
-  //   const dialogRef = this.dialog.open(UpdatePersonalInformationComponent, {
-  //     maxWidth: '50%',
-  //     data: {user: user}
-  //   }); 
-  //   dialogRef.afterClosed()
-  //     .subscribe(res => {
-  //       this.getUserInformation();  
-  //   });
-
-  // }
 
   update(){
    this.profileService.updateUserInformation(this.user.id, this.user).subscribe(

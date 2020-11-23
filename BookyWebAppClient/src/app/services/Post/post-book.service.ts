@@ -6,7 +6,9 @@ import { Injectable } from '@angular/core';
 })
 export class PostBookService {
 
-  readLocalStorageValue() {
+  constructor(private httpClient: HttpClient) {  this.LocalStorageValue(); }
+
+  LocalStorageValue() {
     if(localStorage.getItem("userToken") != null){
       this.httpOptions.headers = this.httpOptions.headers.set('Authorization',  'Basic ' + localStorage.getItem("userToken"));
     };
@@ -18,13 +20,10 @@ export class PostBookService {
     })
   };
 
-
-  constructor(private httpClient: HttpClient) {  this.readLocalStorageValue}
-
   public getPosts(){
     return this.httpClient.get('http://localhost:9090/booky/books/', this.httpOptions);
    }
-
+ 
   public createPost(data){
     return this.httpClient.post('http://localhost:9090/booky/books/', data, this.httpOptions).toPromise().then(data => {
       console.log(data);

@@ -12,14 +12,17 @@
     <ul class="navbar-nav mr-auto">
 
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link waves-light" href="/" [routerLink]="['/booky','users', 1, 'homePage']"
+        <a class="nav-link waves-light" href="/" [routerLink]="['/booky', 'homePage']"
         mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link waves-light" href="#" [routerLink]="['/booky','users', 1, 'posts']"mdbWavesEffect>Post</a>
+        <a class="nav-link waves-light" href="#" [routerLink]="['/booky', 'posts']" mdbWavesEffect *ngIf="isAdmin">Post</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link waves-light" href="#" mdbWavesEffect>Majority</a>
+        <a class="nav-link waves-light" href="#" mdbWavesEffec *ngIf="isAdmin">Majority</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link waves-light" href="#" mdbWavesEffect *ngIf="!isAdmin">MyList</a>
       </li>
 
     </ul>
@@ -37,7 +40,7 @@
           Account<span class="caret"></span></a>
 
         <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
-          <a class="dropdown-item waves-light" mdbWavesEffect href="" [routerLink]="['/booky','users', 1 , 'profile']">Profile</a>
+          <a class="dropdown-item waves-light" mdbWavesEffect href="" [routerLink]="['/booky', 'profile']">Profile</a>
           <a class="dropdown-item waves-light" mdbWavesEffect href="#" [routerLink]="['/booky','logIn']" (click)="logout()">Log out</a>
         </div>
 

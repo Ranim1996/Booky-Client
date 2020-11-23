@@ -1,3 +1,4 @@
+import { UserType } from './../classes/Profile/UserType';
 import { UserService } from './../services/User/user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -40,29 +41,25 @@ export class RegisterComponent implements OnInit {
 
     onSubmit(user){
 
-      console.log("hi");
+      console.log("On register button");
 
       this.userToAdd = {
         "country_code": {
             "code": user.country,
-            "name": user.country
         },
         "dateOfBirth": user.dateOfBirth,
         "email": user.email,
         "firstName": user.firstName,
-        "id": 2,
-        "language_code": {
+        "language_code": { 
           "code":  user.language,
-          "name": user.language
         },
         "lastName": user.lastName,
-        "password": user.password,
+        "password": user.password, 
         "phoneNumber": user.phoneNumber,
-        "usertype": "Reader"
-    }
+    } 
 
-        this.usersService.registerUser(<JSON>this.userToAdd);
-        console.log(this.userToAdd);
+        this.usersService.addNewUser(<JSON>this.userToAdd);
+        console.log("Added" + this.userToAdd);
         this.router.navigate(['booky/logIn']);
 
     }

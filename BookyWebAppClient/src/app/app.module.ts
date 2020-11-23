@@ -60,7 +60,6 @@ import { HeaderComponent } from './header/header.component';
 
 import { A11yModule } from '@angular/cdk/a11y';
 import { ProfileComponent } from './profile/profile.component';
-import { UpdatePersonalInformationComponent } from './update-personal-information/update-personal-information.component';
 import { BookPostsComponent } from './book-posts/book-posts.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { DeletePostComponent } from './delete-post/delete-post.component';
@@ -74,7 +73,6 @@ import { RegisterComponent } from './register/register.component';
     AppComponent,
     HeaderComponent,
     ProfileComponent,
-    UpdatePersonalInformationComponent,
     BookPostsComponent,
     HomePageComponent,
     DeletePostComponent,
@@ -147,7 +145,7 @@ import { RegisterComponent } from './register/register.component';
     ],
   providers: [
     FormsModule,
-    Users,
+    // Users,
     
   ],
   bootstrap: [AppComponent]

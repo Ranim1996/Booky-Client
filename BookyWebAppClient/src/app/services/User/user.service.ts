@@ -1,26 +1,22 @@
+import { Users } from './../../classes/Profile/Users';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private httpClient: HttpClient) {   }
-
-  readLocalStorageValue() {
-    // if(localStorage.getItem("userToken") != null){
-      console.log("Read value function:" + localStorage.getItem("userToken") );
-      // this.httpOptions.headers = this.httpOptions.headers.set('Authorization',  'Basic ' + localStorage.getItem("userToken"));
-      this.httpOptions.headers.set('Authorization',  'Basic ' + localStorage.getItem("userToken"));
-
-    // }
-    // else{
-
-    //   console.log("LOcal storage is nul :(" + localStorage.getItem("userToken"));
-
-    // };
-  } 
+  constructor(private httpClient: HttpClient) {  
+    this.LocalStorageValue(); 
+  }
+  
+  LocalStorageValue() {
+    if(localStorage.getItem("userToken") != null){
+      this.httpOptions.headers = this.httpOptions.headers.set('Authorization',  'Basic ' + localStorage.getItem("userToken"));
+    };
+  }
   
   httpOptions = {
     headers: new HttpHeaders({
@@ -31,13 +27,11 @@ export class UserService {
   token: string;
 
   login(email, password){
+
     const body = email+":"+password;
 
     this.token = btoa(email+':'+password);
     localStorage.setItem('userToken', this.token);
-
-    // this.readLocalStorageValue();
-    // console.log(this.httpOptions);
 
     let httpOP = {
       headers: new HttpHeaders({
@@ -53,11 +47,16 @@ export class UserService {
      this.httpOptions.headers = this.httpOptions.headers.delete('Authorization');
   }
  
-  public registerUser(data){
-    return this.httpClient.post('http://localhost:9090/booky/users/', data, this.httpOptions).toPromise().then(data => {
-      console.log(data);
-    });
-     
+  // public registerUser(data){
+  //   return this.httpClient.post('http://localhost:9090/booky/users/', data).toPromise().then(data => {
+  //     console.log("Service:" + data);
+  //   }); 
+  // }
+
+  public addNewUser(data){
+    return this.httpClient.post('http://localhost:9090/booky/users/', data).toPromise().then(data => {
+      console.log("Service:" + data);
+    }); 
   }
   
 }

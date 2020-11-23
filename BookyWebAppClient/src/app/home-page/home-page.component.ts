@@ -28,7 +28,7 @@ export class HomePageComponent implements OnInit {
       });
   }
 
-  // get all posts so far
+  // get all posts so far 
   getAllPosts() {
     this.postService.getPosts()
     .subscribe(

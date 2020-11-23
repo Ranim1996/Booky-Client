@@ -10,8 +10,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ProfileService {
+  
+  constructor(private httpClient: HttpClient) { this.LocalStorageValue(); } 
 
-  readLocalStorageValue() {
+  LocalStorageValue() {
     if(localStorage.getItem("userToken") != null){
       this.httpOptions.headers = this.httpOptions.headers.set('Authorization',  'Basic ' + localStorage.getItem("userToken"));
     };
@@ -22,9 +24,6 @@ export class ProfileService {
       'Content-Type': 'application/json'
     })
   };
-
-  
-  constructor(private httpClient: HttpClient) { } 
  
   public getUser(){ //get all users
     return this.httpClient.get("http://localhost:9090/booky/users/", this.httpOptions);
@@ -33,6 +32,10 @@ export class ProfileService {
   public getUserById(id){ //get user by id is usefull to git user's profile
     return this.httpClient.get("http://localhost:9090/booky/users/" + id, this.httpOptions);
   }
+
+  // public getUserByType(type){ //get user by type
+  //   return this.httpClient.get("http://localhost:9090/booky/users/" + type, this.httpOptions);
+  // }
 
   public updateUserInformation(id, user) { //update user information by id 
     const url = 'http://localhost:9090/booky/users/' + id;

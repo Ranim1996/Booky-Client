@@ -5,22 +5,21 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthenticationGuard implements CanActivate {
+export class AuthGuard implements CanActivate {
 
-  readLocalStorageValue() {
+  LocalStorageValue() {
     return localStorage.getItem('userToken');
   }
 
   constructor(private router: Router) {}
-  
+
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      
-      if(this.readLocalStorageValue() != null){
+      if(this.LocalStorageValue() != null){
         return true;
       }else{
-        this.router.navigate(['/']);
+        this.router.navigate(['/booky/logIn']);
         return false;
       }
 

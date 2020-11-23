@@ -1,4 +1,3 @@
-import { AuthenticationGuard } from './Authintication/authentication.guard';
 import { RegisterComponent } from './register/register.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { FilterUsersComponent } from './filter-users/filter-users.component';
@@ -7,42 +6,40 @@ import { BookPostsComponent } from './book-posts/book-posts.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
+import { AuthGuard } from './Auth/auth.guard';
 
 const routes: Routes = [
   {
     path: 'booky/profile',
     component: ProfileComponent,
-    // canActivate: [ AuthenticationGuard ]
+    canActivate: [AuthGuard]
   },
-  {
-    path: 'booky/users/:id/profile', 
-    component: ProfileComponent,
-    // canActivate: [ AuthenticationGuard ]
-  },
+  // {
+  //   path: 'booky/users/:id/profile', 
+  //   component: ProfileComponent,
+  // },
   {
     path: 'booky/posts', 
     component: BookPostsComponent,
-    // canActivate: [ AuthenticationGuard ]
+    canActivate: [AuthGuard]
   },
   // {
   //   path: 'booky/users/:id/posts', 
   //   component: BookPostsComponent,
-  //   // canActivate: [ AuthenticationGuard ]
   // },
   {
     path: 'booky/homePage', 
     component: HomePageComponent,
-    // canActivate: [ AuthenticationGuard ]
+    canActivate: [AuthGuard]
   },
   // {
   //   path: 'booky/users/:id/homePage', 
   //   component: HomePageComponent,
-  //   // canActivate: [ AuthenticationGuard ]
   // },
   {
     path: 'booky/books/filter', 
     component: FilterUsersComponent,
-    // canActivate: [ AuthenticationGuard ]
+    canActivate: [AuthGuard]
   },
   {
     path: 'booky/logIn', 

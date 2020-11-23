@@ -19,7 +19,7 @@ export class FilterService {
   };
 
 
-  constructor(private httpClient: HttpClient) { this.readLocalStorageValue }
+  constructor(private httpClient: HttpClient) { this.readLocalStorageValue(); }
 
   public filterBooksByBookType(bookType){
     return this.httpClient.get('http://localhost:9090/booky/books?type=' + bookType, this.httpOptions);
