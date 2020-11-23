@@ -14,23 +14,30 @@ export class HeaderComponent implements OnInit {
   { }
 
   ngOnInit(): void {
+    // this.userService.currentUser.subscribe(x => this.currentUser = x);
   }
 
   currentUser: Users;
 
   admin : boolean = false;
-  reader: boolean = false;
+  // reader: boolean = false;
 
-  isAdmin(): void {
+  // isAdmin(): void {
+  //   if(this.currentUser.userType === UserType.Admin){
+  //       this.admin = true; 
+  //   }
+  // }
+
+  // isReader(): void {
+  //   if(this.currentUser.userType === UserType.Reader){
+  //       this.reader = true; 
+  //   }
+  // }
+
+  isAdmin(): void{
     if(this.currentUser.userType === UserType.Admin){
-        this.admin = true; 
-    }
-  }
-
-  isReader(): void {
-    if(this.currentUser.userType === UserType.Reader){
-        this.reader = true; 
-    }
+      this.admin = true;
+    } 
   }
 
 

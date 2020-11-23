@@ -24,6 +24,8 @@ export class UserService {
     })
   };
 
+  // public currentUser: Observable<Users>;
+  
   token: string;
 
   login(email, password){
@@ -46,12 +48,6 @@ export class UserService {
   logout(){
      this.httpOptions.headers = this.httpOptions.headers.delete('Authorization');
   }
- 
-  // public registerUser(data){
-  //   return this.httpClient.post('http://localhost:9090/booky/users/', data).toPromise().then(data => {
-  //     console.log("Service:" + data);
-  //   }); 
-  // }
 
   public addNewUser(data){
     return this.httpClient.post('http://localhost:9090/booky/users/', data).toPromise().then(data => {

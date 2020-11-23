@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { PostBookService } from '../services/Post/post-book.service';
 import { Book } from '../classes/Book';
+import { Like } from '../classes/Like';
 
 @Component({
   selector: 'app-book-posts',
@@ -28,6 +29,7 @@ export class BookPostsComponent implements OnInit {
   ]
 
   bookToAdd = {};
+  userLikeOnPost : Like;
 
   constructor(private postService: PostBookService,
     private route: ActivatedRoute,
@@ -62,5 +64,6 @@ export class BookPostsComponent implements OnInit {
       this.router.navigate(['booky/homePage']);
 
   }
+
 
 }

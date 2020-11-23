@@ -80,7 +80,7 @@ import { RegisterComponent } from './register/register.component';
     UpdatePostComponent,
     LogInComponent,
     RegisterComponent
-  ],
+],
   imports: [
     BrowserModule,
     HttpClientModule,

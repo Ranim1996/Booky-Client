@@ -44,5 +44,11 @@ export class PostBookService {
     return this.httpClient.put(url, book, this.httpOptions);
   }
 
+  public addLike(data){
+    return this.httpClient.post('http://localhost:9090/booky/books/like/', data).toPromise().then(data => {
+      console.log("In post service: " + data);
+    });   
+  }
+
   
 }
