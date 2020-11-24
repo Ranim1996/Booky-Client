@@ -40,13 +40,15 @@ export class FavoriteListComponent implements OnInit {
 
  openDialogRemobeFromList(book: Book): void {
     console.log(book);
+    console.log("code: " + this.logId);
+
     const dialogRef = this.dialog.open(RemoveFromMyListComponent, {
       maxWidth: '50%',
       data: {book: book}
     }); 
     dialogRef.afterClosed()
       .subscribe(res => {
-        window.location.reload();
+        // window.location.reload();
     });
  }
 

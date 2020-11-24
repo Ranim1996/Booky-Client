@@ -1,1 +1,9 @@
-<p>remove-from-my-list works!</p>
+<div id="confirm" mat-dialog-content>
+    <p> Do you want to remove this book from your list?</p>
+</div>
+
+<div mat-dialog-actions>
+      <button mat-raised-button cdkFocusInitial (click)="removeBook()">Yes</button>
+      <button mat-raised-button (click)="noClick()">No</button>  
+</div> 
+
