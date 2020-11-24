@@ -1,0 +1,41 @@
+.example-card {
+    max-width: 600px;
+    /* margin-left: 50px; */
+    margin-top: 75px;
+    background: lavenderblush;
+  }
+  
+  .mat-flat-button.mat-accent, .mat-raised-button.mat-accent, .mat-fab.mat-accent, .mat-mini-fab.mat-accent {
+    background-color: white;
+    color: palevioletred;
+    margin-left: 20px;
+  }
+  
+  .mat-card-content{
+    margin-left: 20px;
+  }
+  
+  .detail{
+    margin-left: 400px;
+  }
+
+  h1{
+    padding-left: 5%;
+  } 
+
+  .container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl {
+    width: 100%;
+    text-align: -webkit-center;
+  }
+
+  .intro{
+    margin-right: 200px;
+  }
+
+  .content{
+    margin-right: 200px;
+  }
+
+  .actions{
+    margin-right: 300px;
+  }

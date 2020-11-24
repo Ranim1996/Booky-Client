@@ -67,6 +67,8 @@ import { FilterUsersComponent } from './filter-users/filter-users.component';
 import { UpdatePostComponent } from './update-post/update-post.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { RegisterComponent } from './register/register.component';
+import { FavoriteListComponent } from './favorite-list/favorite-list.component';
+import { RemoveFromMyListComponent } from './remove-from-my-list/remove-from-my-list.component';
 
 @NgModule({
   declarations: [
@@ -79,7 +81,9 @@ import { RegisterComponent } from './register/register.component';
     FilterUsersComponent,
     UpdatePostComponent,
     LogInComponent,
-    RegisterComponent
+    RegisterComponent,
+    FavoriteListComponent,
+    RemoveFromMyListComponent
 ],
   imports: [
     BrowserModule,

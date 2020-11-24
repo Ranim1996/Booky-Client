@@ -17,7 +17,7 @@ export class HomePageComponent implements OnInit {
 
     //fields
     books: Book[];
-    logId: string;
+    logId: string; 
     user: Users;
     like: Like;
     

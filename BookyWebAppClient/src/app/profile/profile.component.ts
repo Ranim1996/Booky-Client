@@ -43,8 +43,7 @@ export class ProfileComponent implements OnInit {
       console.log(data);
       this.user = <Users>data;
       console.log("profile: " + this.user);
-     });
-     
+     }); 
 
   }
 

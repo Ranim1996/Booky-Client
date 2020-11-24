@@ -50,5 +50,13 @@ export class PostBookService {
     });   
   }
 
+  // public getLikedBooks(id){ 
+  //   return this.httpClient.get("http://localhost:9090/booky/books/MyList?Id=" + id, this.httpOptions);
+  // }
+
+  public getLikedBooks(id){ 
+    return this.httpClient.get("http://localhost:9090/booky/books/MyList?id=" + id, this.httpOptions);
+  }
+
   
 }

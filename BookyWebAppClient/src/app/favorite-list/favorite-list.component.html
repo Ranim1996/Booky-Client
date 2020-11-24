@@ -1,0 +1,47 @@
+<div class="container p-3 my-3 border">
+
+    <mat-card class="example-card">
+  
+      <tr id="test"  *ngFor="let book of books">
+          <mat-card-header>          
+          </mat-card-header>
+  
+          <mat-card-content> 
+
+            <!-- <div class="actions float-right"> -->
+                
+              <!-- <button mat-mini-fab aria-label="Example icon button with a delete icon" (click)="openDialogRemobeFromList(book)"><mat-icon matTooltip="Delete post"> delete </mat-icon></button> -->
+        
+            <!-- </div> -->
+  
+            <div class="intro">
+              <h4>{{book.bookName}} written by: {{book.authorName}}</h4>
+            </div>
+  
+            <div class="content">
+              <h5>Book Type: {{book.bookType}}</h5>
+            </div>
+  
+          </mat-card-content>
+          
+      
+          <mat-card-actions>
+              
+          </mat-card-actions>
+  
+          <mat-divider></mat-divider>
+          <br>
+      </tr>
+      
+  </mat-card>
+  
+  
+  </div>
+  
+  
+  
+  
+  
+    
+  
+  

@@ -10,11 +10,9 @@ import { UserType } from '../classes/Profile/UserType';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private userService: UserService) 
-  { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
-    // this.userService.currentUser.subscribe(x => this.currentUser = x);
   }
 
   currentUser: Users;
