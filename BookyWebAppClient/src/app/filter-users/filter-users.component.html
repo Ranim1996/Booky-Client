@@ -69,7 +69,7 @@
                 <mat-icon> insert_photo </mat-icon>
                 {{book.bookName}} - {{book.authorName}} <br>
                 <div class="btn">
-                  <button mat-mini-fab aria-label="Example icon button with a favorite icon" href="#"><mat-icon matTooltip="Add to my favorite" (click)="AddToMyList(book.id)"> favorite </mat-icon></button>
+                  <button mat-mini-fab aria-label="Example icon button with a favorite icon" href="#" *ngIf="currentUser.usertype == 'Reader'"><mat-icon matTooltip="Add to my favorite" (click)="AddToMyList(book.id)" *ngIf="currentUser.usertype == 'Reader'"> favorite </mat-icon></button>
                 </div>
                 <!-- Brief describtion: {{book.describtion}} -->
                 <br>

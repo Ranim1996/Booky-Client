@@ -2,8 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Book } from '../classes/Book';
 import { Language } from '../classes/Profile/Language';
+import { Users } from '../classes/Profile/Users';
+import { UserType } from '../classes/Profile/UserType';
 import { FilterService } from '../services/filter/filter.service';
 import { PostBookService } from '../services/Post/post-book.service';
+import { ProfileService } from '../services/Profile/profile.service';
 
 @Component({
   selector: 'app-filter-users',
@@ -24,14 +27,26 @@ export class FilterUsersComponent implements OnInit {
 
   constructor(private filterService: FilterService,
               private route: ActivatedRoute,
-              private postService: PostBookService
+              private postService: PostBookService,
+              private profileService: ProfileService
               ) { }
 
   
   logId: string;
+  currentUser: Users;
+  admin: UserType = UserType.Admin;
+  reader: UserType = UserType.Reader;
 
   ngOnInit(): void {
     this.logId = localStorage.getItem('userId');
+
+    console.log("id in filter: " + this.logId);
+    
+    this.profileService.getUserById(this.logId).subscribe((data)=>{
+      console.log(data);
+      this.currentUser = <Users>data;
+      console.log("Filter: " + this.currentUser.id + this.currentUser.usertype);
+     });
   }
 
   selectionLanguage: String;

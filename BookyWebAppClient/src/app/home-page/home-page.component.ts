@@ -7,6 +7,8 @@ import { Book } from '../classes/Book';
 import { DeletePostComponent } from '../delete-post/delete-post.component';
 import { PostBookService } from '../services/Post/post-book.service';
 import { Like } from '../classes/Like';
+import { ProfileService } from '../services/Profile/profile.service';
+import { UserType } from '../classes/Profile/UserType';
 
 @Component({
   selector: 'app-home-page',
@@ -20,11 +22,15 @@ export class HomePageComponent implements OnInit {
     logId: string; 
     user: Users;
     like: Like;
+    currentUser: Users;
+    admin: UserType = UserType.Admin;
+    reader: UserType = UserType.Reader;
     
     //constracture
     constructor(private postService: PostBookService,
       private route: ActivatedRoute,
-      public dialog: MatDialog) { }
+      public dialog: MatDialog,
+      private profileService: ProfileService) { }
 
   ngOnInit(): void {
 
@@ -33,6 +39,14 @@ export class HomePageComponent implements OnInit {
     this.postService.getPosts().subscribe((data)=>{
         console.log(data);
        this.books = <Book[]>data;
+      });
+
+    console.log("id in home: " + this.logId);
+  
+    this.profileService.getUserById(this.logId).subscribe((data)=>{
+      console.log(data);
+      this.currentUser = <Users>data;
+      console.log("Home: " + this.currentUser.id + this.currentUser.usertype);
       });
   }
 

@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit {
   currentUser: Users;
   admin: UserType = UserType.Admin;
   reader: UserType = UserType.Reader;
+  
 
   ngOnInit(): void {
 
