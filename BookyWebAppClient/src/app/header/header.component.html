@@ -16,13 +16,13 @@
         mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link waves-light" href="#" [routerLink]="['/booky', 'posts']" mdbWavesEffect>Post</a>
+        <a class="nav-link waves-light" href="#" [routerLink]="['/booky', 'posts']" mdbWavesEffect *ngIf="currentUser.usertype == 'Admin'">Post</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link waves-light" href="#" mdbWavesEffec>Majority</a>
+        <a class="nav-link waves-light" href="#" mdbWavesEffec *ngIf="currentUser.usertype == 'Admin'">Majority</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link waves-light" href="#" [routerLink]="['/booky', 'MyList']" mdbWavesEffect>MyList</a>
+        <a class="nav-link waves-light" href="#" [routerLink]="['/booky', 'MyList']" mdbWavesEffect *ngIf="currentUser.usertype == 'Reader'">MyList</a>
       </li>
 
     </ul>

@@ -48,7 +48,7 @@ export class FavoriteListComponent implements OnInit {
     }); 
     dialogRef.afterClosed()
       .subscribe(res => {
-        // window.location.reload();
+      window.location.reload();
     });
  }
 

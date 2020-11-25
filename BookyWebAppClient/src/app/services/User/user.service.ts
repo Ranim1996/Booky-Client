@@ -1,7 +1,5 @@
-import { Users } from './../../classes/Profile/Users';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -23,8 +21,6 @@ export class UserService {
       'Content-Type': 'application/json'
     })
   };
-
-  // public currentUser: Observable<Users>;
   
   token: string;
 

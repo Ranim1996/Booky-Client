@@ -33,9 +33,9 @@ export class ProfileService {
     return this.httpClient.get("http://localhost:9090/booky/users/" + id, this.httpOptions);
   }
 
-  // public getUserByType(type){ //get user by type
-  //   return this.httpClient.get("http://localhost:9090/booky/users/" + type, this.httpOptions);
-  // }
+  public getUserTypeByUserId(id){ //get user type by user id
+    return this.httpClient.get("http://localhost:9090/booky/users/type/" + id, this.httpOptions);
+  }
 
   public updateUserInformation(id, user) { //update user information by id 
     const url = 'http://localhost:9090/booky/users/' + id;

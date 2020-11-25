@@ -19,7 +19,7 @@ export class Users{
     public id: number,
     public firstName: String,
     public lastName: String,
-    public userType: UserType,
+    public usertype: UserType,
     public email: String,
     public password: String,
     public phoneNumber: String,

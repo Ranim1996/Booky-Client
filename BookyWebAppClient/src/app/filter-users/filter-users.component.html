@@ -68,7 +68,10 @@
               <td class="font-italic"> 
                 <mat-icon> insert_photo </mat-icon>
                 {{book.bookName}} - {{book.authorName}} <br>
-                Brief describtion: {{book.describtion}}
+                <div class="btn">
+                  <button mat-mini-fab aria-label="Example icon button with a favorite icon" href="#"><mat-icon matTooltip="Add to my favorite" (click)="AddToMyList(book.id)"> favorite </mat-icon></button>
+                </div>
+                <!-- Brief describtion: {{book.describtion}} -->
                 <br>
                 <br>
                 <mat-divider></mat-divider>

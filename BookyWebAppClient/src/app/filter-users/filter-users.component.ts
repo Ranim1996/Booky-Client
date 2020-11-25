@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Book } from '../classes/Book';
 import { Language } from '../classes/Profile/Language';
 import { FilterService } from '../services/filter/filter.service';
+import { PostBookService } from '../services/Post/post-book.service';
 
 @Component({
   selector: 'app-filter-users',
@@ -22,10 +23,15 @@ export class FilterUsersComponent implements OnInit {
   ]; 
 
   constructor(private filterService: FilterService,
-              private route: ActivatedRoute
+              private route: ActivatedRoute,
+              private postService: PostBookService
               ) { }
 
+  
+  logId: string;
+
   ngOnInit(): void {
+    this.logId = localStorage.getItem('userId');
   }
 
   selectionLanguage: String;
@@ -73,6 +79,19 @@ export class FilterUsersComponent implements OnInit {
 
   foundDataByType(){
     return this.SelectionType;
+  }
+
+  AddToMyList(id){
+    console.log("book id: " + id + "user id: " + this.logId);
+
+    let like = {
+      bookId: id,
+      userId: this.logId
+    }
+
+    this.postService.addLike(like);
+    console.log("Like Is Added" + like);
+      
   }
 
 
