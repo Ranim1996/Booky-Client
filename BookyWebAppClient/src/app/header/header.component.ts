@@ -18,13 +18,12 @@ export class HeaderComponent implements OnInit {
   currentUser: Users;
   admin: UserType = UserType.Admin;
   reader: UserType = UserType.Reader;
-  
 
   ngOnInit(): void {
 
     this.id = localStorage.getItem('userId'); 
 
-    console.log("id in Header: " + this.id);
+    console.log("id in Header: " + this.id + this.admin + this.reader);
     
     this.profileService.getUserById(this.id).subscribe((data)=>{
       console.log(data);
