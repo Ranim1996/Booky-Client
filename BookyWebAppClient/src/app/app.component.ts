@@ -13,10 +13,10 @@ export class AppComponent {
   }
   
   userIsLogged(){
-    if(this.readLocalStorageValue() != null){
-    return true;
+    if(localStorage.getItem('userToken') != null && localStorage.getItem('userId') != null ){
+      return true;
     }else{
-    return false;
+      return false;
     }
   }
 

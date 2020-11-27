@@ -14,7 +14,7 @@ export class LogInComponent implements OnInit {
   loginForm: FormGroup;
 
   token:string;
-  loggedIn:boolean;
+  loggedIn:boolean; 
   isLoginError : boolean = false;
   user: Users;
 

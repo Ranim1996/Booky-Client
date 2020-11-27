@@ -70,6 +70,7 @@ export class HomePageComponent implements OnInit {
     dialogRef.afterClosed()
       .subscribe(res => {
         this.getAllPosts();  
+        window.location.reload();
     });
 
   }

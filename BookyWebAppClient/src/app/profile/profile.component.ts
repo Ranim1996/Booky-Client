@@ -61,6 +61,7 @@ export class ProfileComponent implements OnInit {
       this.user = <Users>data;
       console.log("profile: " + this.user);
      }); 
+     
 
   }
 
@@ -79,6 +80,8 @@ export class ProfileComponent implements OnInit {
       (res: Users) => {
         this.updated = res;
         console.log("updated");
+        window.location.reload();
+
       });
   }
 
