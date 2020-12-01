@@ -1,7 +1,7 @@
 import { UserType } from './../classes/Profile/UserType';
 import { UserService } from './../services/User/user.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Users } from '../classes/Profile/Users';
 import { MatDialog } from '@angular/material/dialog';
@@ -38,6 +38,20 @@ export class RegisterComponent implements OnInit {
     ngOnInit() {
 
     }
+
+    //Object Fields that will be used in this project + specify their validation.
+  form = new FormGroup({
+    firstName: new FormControl('', Validators.required),
+    lastName: new FormControl('', Validators.required), 
+    email: new FormControl('', [
+      Validators.required,
+      Validators.email
+    ]),
+    password: new FormControl('', [
+      Validators.required,
+      Validators.minLength(10)
+    ]),
+  });
 
     onSubmit(user){
 

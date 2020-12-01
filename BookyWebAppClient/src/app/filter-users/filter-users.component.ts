@@ -36,6 +36,7 @@ export class FilterUsersComponent implements OnInit {
   currentUser: Users;
   admin: UserType = UserType.Admin;
   reader: UserType = UserType.Reader;
+  searchText = '';
 
   ngOnInit(): void {
     this.logId = localStorage.getItem('userId');
@@ -83,6 +84,19 @@ export class FilterUsersComponent implements OnInit {
     });
 
   }
+
+  getBooksByChars(){
+
+    if (this.searchText != null){
+      this.filterService.filterBooksByName(this.searchText).subscribe((data)=>
+      {
+       this.books=<Book[]>data;
+        console.log(this.book);     
+      });
+    }
+
+  }
+
 
   ClearFilters(){
     window.location.reload();

@@ -58,6 +58,24 @@
       <!-- FOUND Books -->
       <div class="col-sm">
         <mat-card class="found-card">
+
+          <form class="example-form float-right">
+            <mat-form-field class="example-full-width">
+              <mat-label>Search</mat-label>
+              <input type="text" matInput placeholder="Search for Book"
+              id="search-text" 
+              aria-describedby="search-text" 
+              name="searchText"
+              [(ngModel)]="searchText" 
+              autofocus>
+            </mat-form-field>
+  
+            <button class="float-right" mat-icon-button ria-label="" (click)="getBooksByChars()">
+              <mat-icon>search</mat-icon>
+            </button>
+  
+          </form>
+  
   
           <mat-card-header>
             <mat-card-title>Found Books:</mat-card-title>

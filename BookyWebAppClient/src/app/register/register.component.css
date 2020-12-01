@@ -59,5 +59,22 @@
   .mat-flat-button.mat-accent, .mat-raised-button.mat-accent, .mat-fab.mat-accent, .mat-mini-fab.mat-accent {
       color: palevioletred;
   }
+
+
+  /* Design the group boxes */
+.main-content {
+  padding: 2%;
+  margin-left: 25%;
+  margin-top: 2%;
+  width: 50%;
+  border: 12px solid lavenderblush;
+}
+
+/* For the font. */
+label {
+  font-size: 15px;
+  font-weight: bold;
+}
+
   
   

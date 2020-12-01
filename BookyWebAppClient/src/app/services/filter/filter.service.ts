@@ -33,4 +33,9 @@ export class FilterService {
     return this.httpClient.get('http://localhost:9090/booky/books?type=' +  type + "&language=" + language, this.httpOptions);
   }
 
+  public filterBooksByName(name){
+    return this.httpClient.get('http://localhost:9090/booky/books?bookName=' + name, this.httpOptions);
+  }
+
+
 }
