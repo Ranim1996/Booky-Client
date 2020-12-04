@@ -21,7 +21,7 @@
       </li>
       <li class="nav-item" routerLinkActive="active">
         <!-- *ngIf="currentUser.usertype == 'Admin'" -->
-        <a class="nav-link waves-light" href="#" mdbWavesEffec *ngIf="currentUser.usertype == 'Admin'">Majority</a>
+        <a class="nav-link waves-light" href="#" mdbWavesEffec [routerLink]="['/booky', 'Majority']" *ngIf="currentUser.usertype == 'Admin'">Majority</a>
       </li>
       <li class="nav-item" routerLinkActive="active">
         <!-- *ngIf="currentUser.usertype == 'Reader'" -->

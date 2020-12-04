@@ -1,3 +1,4 @@
+import { MajorityComponent } from './majority/majority.component';
 import { FavoriteListComponent } from './favorite-list/favorite-list.component';
 import { RegisterComponent } from './register/register.component';
 import { LogInComponent } from './log-in/log-in.component';
@@ -53,6 +54,11 @@ const routes: Routes = [
   {
     path: 'booky/MyList', 
     component: FavoriteListComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'booky/Majority', 
+    component: MajorityComponent,
     canActivate: [AuthGuard]
   },
 ]

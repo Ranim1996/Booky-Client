@@ -58,18 +58,11 @@ export class RegisterComponent implements OnInit {
       console.log("On register button");
 
       this.userToAdd = {
-        "country_code": {
-            "code": user.country,
-        },
         "dateOfBirth": user.dateOfBirth,
         "email": user.email,
         "firstName": user.firstName,
-        "language_code": { 
-          "code":  user.language,
-        },
         "lastName": user.lastName,
         "password": user.password, 
-        "phoneNumber": user.phoneNumber,
     } 
 
         this.usersService.addNewUser(<JSON>this.userToAdd);

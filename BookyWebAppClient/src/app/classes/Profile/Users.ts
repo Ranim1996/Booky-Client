@@ -22,9 +22,9 @@ export class Users{
     public usertype: UserType,
     public email: String,
     public password: String,
-    public phoneNumber: String,
-    public country_code: Country,
-    public language_code: Language,
+    // public phoneNumber: String,
+    // public country_code: Country,
+    // public language_code: Language,
     public dateOfBirth: String,
   ){}
 
