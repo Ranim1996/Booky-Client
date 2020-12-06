@@ -28,7 +28,9 @@ export class UserService {
 
     const body = email+":"+password;
 
-    this.token = btoa(email+':'+password);
+    // this.token = btoa(email+':'+password);
+    this.token = btoa(email);
+
     localStorage.setItem('userToken', this.token);
 
     let httpOP = {
