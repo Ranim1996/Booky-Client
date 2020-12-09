@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Book } from '../classes/Book';
+import { Book } from '../classes/Book/Book';
 import { Users } from '../classes/Profile/Users';
 import { UserType } from '../classes/Profile/UserType';
 import { FilterService } from '../services/filter/filter.service';
@@ -16,12 +16,12 @@ export class FilterBooksComponent implements OnInit {
 
   types: Object[] = [
     {value: 'Classics', viewValue: 'Classics'},
-    {value: 'ActionandAdventure', viewValue: 'ActionandAdventure'},
+    {value: 'ActionandAdventure', viewValue: 'Action and Adventure'},
     {value: 'Romantic', viewValue: 'Romantic'},
     {value: 'Fantasy', viewValue: 'Fantasy'},
     {value: 'Horror', viewValue: 'Horror'},
-    {value: 'DetectiveandMystery', viewValue: 'DetectiveandMystery'},
-    {value: 'LitraryFiction', viewValue: 'LitraryFiction'}
+    {value: 'DetectiveandMystery', viewValue: 'Detective and Mystery'},
+    {value: 'LitraryFiction', viewValue: 'Litrary Fiction'}
   ]; 
 
   constructor(private filterService: FilterService,

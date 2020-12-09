@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { PostBookService } from '../services/Post/post-book.service';
-import { Book } from '../classes/Book';
-import { Like } from '../classes/Like';
+import { Like } from '../classes/Book/Like';
+import { Book } from '../classes/Book/Book';
+
 
 @Component({
   selector: 'app-book-posts',

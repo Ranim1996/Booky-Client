@@ -1,10 +1,5 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Country } from 'src/app/classes/Profile/Country';
-import { Language } from 'src/app/classes/Profile/Language';
-import { Users } from 'src/app/classes/Profile/Users';
-import { UserType } from 'src/app/classes/Profile/UserType';
-import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'

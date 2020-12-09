@@ -2,10 +2,10 @@ import { RemoveFromMyListComponent } from './../remove-from-my-list/remove-from-
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
-import { Book } from '../classes/Book';
-import { Like } from '../classes/Like';
 import { Users } from '../classes/Profile/Users';
 import { PostBookService } from '../services/Post/post-book.service';
+import { Book } from '../classes/Book/Book';
+import { Like } from '../classes/Book/Like';
 
 @Component({
   selector: 'app-favorite-list',

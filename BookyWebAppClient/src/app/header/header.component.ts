@@ -1,4 +1,3 @@
-import { UserType } from 'src/app/classes/Profile/UserType';
 import { ProfileService } from './../services/Profile/profile.service';
 import { Users } from './../classes/Profile/Users';
 import { UserService } from './../services/User/user.service';

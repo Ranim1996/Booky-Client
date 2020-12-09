@@ -1,5 +1,5 @@
 import { BookType } from './BookType';
-import { Language } from './Profile/Language';
+import { Language } from '../Profile/Language';
 import { constructor } from 'process';
 
 export class Book{

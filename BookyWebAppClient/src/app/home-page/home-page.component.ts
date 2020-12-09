@@ -3,12 +3,12 @@ import { UpdatePostComponent } from './../update-post/update-post.component';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
-import { Book } from '../classes/Book';
 import { DeletePostComponent } from '../delete-post/delete-post.component';
 import { PostBookService } from '../services/Post/post-book.service';
-import { Like } from '../classes/Like';
 import { ProfileService } from '../services/Profile/profile.service';
 import { UserType } from '../classes/Profile/UserType';
+import { Book } from '../classes/Book/Book';
+import { Like } from '../classes/Book/Like';
 
 @Component({
   selector: 'app-home-page',

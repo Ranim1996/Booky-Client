@@ -1,12 +1,8 @@
 import { Users } from 'src/app/classes/Profile/Users';
-import { Country } from './../classes/Profile/Country';
-import { Language } from './../classes/Profile/Language';
 import { ProfileService } from './../services/Profile/profile.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { UserType } from '../classes/Profile/UserType';
 import { MatDialog } from '@angular/material/dialog';
-import { THIS_EXPR, ThrowStmt } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-profile',
