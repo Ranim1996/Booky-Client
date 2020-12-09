@@ -16,33 +16,31 @@ export class HeaderComponent implements OnInit {
 
   id: string;
   currentUser: Users;
-  admin: UserType = UserType.Admin;
-  reader: UserType = UserType.Reader;
+  typeOfUser;
 
   ngOnInit(): void {
 
     this.id = localStorage.getItem('userId'); 
 
-    console.log("id in Header: " + this.id + this.admin + this.reader);
-    
+    this.typeOfUser = localStorage.getItem('userType');
+
     this.profileService.getUserById(this.id).subscribe((data)=>{
       console.log(data);
       this.currentUser = <Users>data;
-      console.log("Header: " + this.currentUser.id + this.currentUser.usertype);
+      console.log("Header: " + this.currentUser.id + this.currentUser.usertype.toString());
      });
   }
   
-  // isAdmin() {
-  //   if(this.currentUser.usertype == UserType.Admin){
-  //       return true;
-  //   }
-  // }
-
-  // isReader() {
-  //   if(this.currentUser.usertype == UserType.Reader){
-  //       return true;
-  //   }
-  // }
+  isAdmin(): String {
+    if(this.typeOfUser == "Admin"){
+      console.log("Admin is logged in");
+        return "Admin";
+    }
+    if(this.typeOfUser == "Reader"){
+      console.log("Reader is logged in");
+        return "Reader";
+    }
+  }
 
   // admin : boolean = false;
   // reader: boolean = false;

@@ -41,6 +41,7 @@ export class LogInComponent implements OnInit {
         console.log(this.user);
         console.log(this.user.id);
         localStorage.setItem('userId', this.user.id.toString());
+        localStorage.setItem('userType', this.user.usertype.toString());
         this.router.navigate(['booky/profile']);
       },
       
