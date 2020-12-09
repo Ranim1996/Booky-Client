@@ -63,13 +63,13 @@ import { ProfileComponent } from './profile/profile.component';
 import { BookPostsComponent } from './book-posts/book-posts.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { DeletePostComponent } from './delete-post/delete-post.component';
-import { FilterUsersComponent } from './filter-users/filter-users.component';
 import { UpdatePostComponent } from './update-post/update-post.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { RegisterComponent } from './register/register.component';
 import { FavoriteListComponent } from './favorite-list/favorite-list.component';
 import { RemoveFromMyListComponent } from './remove-from-my-list/remove-from-my-list.component';
 import { MajorityComponent } from './majority/majority.component';
+import { FilterBooksComponent } from './filter-books/filter-books.component';
 
 @NgModule({
   declarations: [
@@ -79,13 +79,13 @@ import { MajorityComponent } from './majority/majority.component';
     BookPostsComponent,
     HomePageComponent,
     DeletePostComponent,
-    FilterUsersComponent,
     UpdatePostComponent,
     LogInComponent,
     RegisterComponent,
     FavoriteListComponent,
     RemoveFromMyListComponent,
-    MajorityComponent
+    MajorityComponent,
+    FilterBooksComponent
 ],
   imports: [
     BrowserModule,

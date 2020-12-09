@@ -33,11 +33,11 @@ export class HeaderComponent implements OnInit {
   
   isAdmin(): String {
     if(this.typeOfUser == "Admin"){
-      console.log("Admin is logged in");
+      // console.log("Admin is logged in");
         return "Admin";
     }
     if(this.typeOfUser == "Reader"){
-      console.log("Reader is logged in");
+      // console.log("Reader is logged in");
         return "Reader";
     }
   }
