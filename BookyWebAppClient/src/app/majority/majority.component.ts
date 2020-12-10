@@ -1,4 +1,9 @@
+import { BookDTO } from './../classes/BookDTO/BookDTO';
+import { MajorityService } from './../services/majority/majority.service';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ProfileService } from '../services/Profile/profile.service';
+import { Users } from '../classes/Profile/Users';
 
 @Component({
   selector: 'app-majority',
@@ -17,9 +22,40 @@ export class MajorityComponent implements OnInit {
     {value: 'LitraryFiction', viewValue: 'Litrary Fiction'}
   ]; 
 
-  constructor() { }
+  SelectionType: String;
 
-  ngOnInit(): void {
-  }
+  constructor(private majorityService: MajorityService,
+    private route: ActivatedRoute,
+    private profileService: ProfileService
+    ) { }
+
+    logId: string;
+    currentUser: Users;
+    books: BookDTO[]; 
+    book: BookDTO;
+
+    ngOnInit(): void {
+    this.logId = localStorage.getItem('userId');
+
+    console.log("id in majority: " + this.logId);
+
+    this.profileService.getUserById(this.logId).subscribe((data)=>{
+    console.log(data);
+    this.currentUser = <Users>data;
+    console.log("MajorityPage: " + this.currentUser.id);
+    });
+    }
+
+    getMajority(){
+      console.log(this.SelectionType);
+      this.majorityService.getBooksMajority(this.SelectionType).subscribe((data)=>{
+        this.book = <BookDTO>data;
+        console.log("get books:" + this.book);
+      });
+    }
+
+    majorityByType(){
+      return this.SelectionType;
+    }
 
 }

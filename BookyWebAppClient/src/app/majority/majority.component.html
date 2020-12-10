@@ -14,10 +14,8 @@
             <h4>Book type:</h4>
             <mat-form-field appearance="fill">
               <mat-label>Type</mat-label>
-              <!-- [(ngModel)]="SelectionType" (ngModelChange)="foundDataByType()" -->
-              <mat-select ng-model>
-                <!-- (click)="getBooksByBookType()" -->
-                <mat-option *ngFor="let t of types" name="filter" [value]="t.value">
+              <mat-select ng-model [(ngModel)]="SelectionType" (ngModelChange)="majorityByType()">
+                <mat-option *ngFor="let t of types" name="filter" [value]="t.value" (click)="getMajority()">
                   {{t.viewValue}}
                 </mat-option>
               </mat-select>
@@ -33,32 +31,5 @@
           
         </mat-card>
       </div>
-  
-  
-      <!-- Data -->
-      <div class="col-sm">
-        <mat-card class="found-card">
-  
-          <mat-card-header>
-            <mat-card-title>Data:</mat-card-title>
-          </mat-card-header>
 
-          <!-- <tr id="bookId"  *ngFor="let book of books"> -->
-            
-              <!-- <td class="font-italic">  -->
-                <!-- There are: {{book.describtion}} -->
-                <!-- <br>
-                <br>
-              </td> -->
-
-          <!-- </tr> -->
-  
-          <mat-card-content>
-          </mat-card-content>
-  
-        </mat-card> 
-      </div>
-  
-    </div>
-  </div>
   

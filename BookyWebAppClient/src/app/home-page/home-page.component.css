@@ -1,6 +1,5 @@
 .example-card {
     max-width: 600px;
-    /* margin-left: 50px; */
     margin-top: 75px;
     background: lavenderblush;
   }
@@ -39,13 +38,3 @@
   .actions{
     margin-right: 300px;
   }
-
-
-  /* .delete{
-    margin-left: 300px;
-  } */
-  
-  
-  /* .example-header-image {
-    background-size: cover;
-  } */

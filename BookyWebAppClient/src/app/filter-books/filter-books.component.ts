@@ -38,15 +38,15 @@ export class FilterBooksComponent implements OnInit {
     searchText = '';
 
     ngOnInit(): void {
-    this.logId = localStorage.getItem('userId');
+      this.logId = localStorage.getItem('userId');
 
-    console.log("id in filter: " + this.logId);
+      console.log("id in filter: " + this.logId);
 
-    this.profileService.getUserById(this.logId).subscribe((data)=>{
-    console.log(data);
-    this.currentUser = <Users>data;
-    console.log("Filter: " + this.currentUser.id + this.currentUser.usertype);
-    });
+      this.profileService.getUserById(this.logId).subscribe((data)=>{
+      console.log(data);
+      this.currentUser = <Users>data;
+      console.log("Filter: " + this.currentUser.id + this.currentUser.usertype);
+      });
     }
 
     selectionLanguage: String;

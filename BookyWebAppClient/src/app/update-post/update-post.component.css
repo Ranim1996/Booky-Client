@@ -4,6 +4,7 @@
 
 .example-card {
     background: lavenderblush;
+    width: 500px;
 }
 
 /* screens less than 1130 */
