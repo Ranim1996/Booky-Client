@@ -1,7 +1,7 @@
+import { RegisterationComponent } from './registeration/registeration.component';
 import { FilterBooksComponent } from './filter-books/filter-books.component';
 import { MajorityComponent } from './majority/majority.component';
 import { FavoriteListComponent } from './favorite-list/favorite-list.component';
-import { RegisterComponent } from './register/register.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { BookPostsComponent } from './book-posts/book-posts.component';
@@ -49,7 +49,7 @@ const routes: Routes = [
   },
   {
     path: 'booky/register', 
-    component: RegisterComponent,
+    component: RegisterationComponent,
   },
   {
     path: 'booky/MyList', 

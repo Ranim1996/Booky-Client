@@ -65,11 +65,11 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { DeletePostComponent } from './delete-post/delete-post.component';
 import { UpdatePostComponent } from './update-post/update-post.component';
 import { LogInComponent } from './log-in/log-in.component';
-import { RegisterComponent } from './register/register.component';
 import { FavoriteListComponent } from './favorite-list/favorite-list.component';
 import { RemoveFromMyListComponent } from './remove-from-my-list/remove-from-my-list.component';
 import { MajorityComponent } from './majority/majority.component';
 import { FilterBooksComponent } from './filter-books/filter-books.component';
+import { RegisterationComponent } from './registeration/registeration.component';
 
 @NgModule({
   declarations: [
@@ -81,11 +81,11 @@ import { FilterBooksComponent } from './filter-books/filter-books.component';
     DeletePostComponent,
     UpdatePostComponent,
     LogInComponent,
-    RegisterComponent,
     FavoriteListComponent,
     RemoveFromMyListComponent,
     MajorityComponent,
-    FilterBooksComponent
+    FilterBooksComponent,
+    RegisterationComponent
 ],
   imports: [
     BrowserModule,
