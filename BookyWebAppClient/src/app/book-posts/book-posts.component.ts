@@ -47,8 +47,8 @@ export class BookPostsComponent implements OnInit {
 
     console.log("hi");
 
-    this.bookToAdd = {
-        "authorName": book.author,
+    this.bookToAdd = { 
+        "authorName": book.authorName,
         "bookName": book.bookName,
         "bookType": book.bookType,
         "describtion": book.desc,
@@ -56,7 +56,6 @@ export class BookPostsComponent implements OnInit {
             "code":  book.language,
             "name": book.language
         },
-        // "time": "2020-11-01",
         
     }
 
@@ -64,6 +63,13 @@ export class BookPostsComponent implements OnInit {
       console.log(this.bookToAdd);
       this.router.navigate(['booky/homePage']);
 
+  }
+
+  public inputValidator(event: any) {
+    const pattern = /^[a-zA-Z]*$/;   
+    if (!pattern.test(event.target.value)) {
+      event.target.value = event.target.value.replace(/[^a-zA-Z]/g, "");
+    }
   }
 
 

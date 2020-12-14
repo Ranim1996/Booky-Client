@@ -1,71 +1,81 @@
-<mat-card class="example-card">
+<div class="container">
 
-  <mat-card-header></mat-card-header>
+  <form  class="text-center border-silver" #book="ngForm" (ngSubmit)="onSubmitBook(book.value)">
 
-  <mat-card-content> 
+    <mat-form-field class="input-full-width">
+      <input matInput 
+          required
+          type="text" 
+          [(ngModel)]="book.bookName" 
+          name="bookName" 
+          placeholder="Book" 
+          #bookName="ngModel"/>
+          <div *ngIf="bookName.invalid && (book.submitted || bookName.touched)" class="alert alert-danger">
+          <div *ngIf="bookName.errors.required"> Book Name is required. </div>
+          </div>
+  </mat-form-field>
 
-      <form  class="text-center border-silver" #book="ngForm" (ngSubmit)="onSubmitBook(book.value)">
+    <br>
+    <br>
 
-        <mat-form-field class="input-full-width">
-          <input matInput type="text" name="bookName" ngModel placeholder="Book" required> 
-        </mat-form-field>
-  
-        <br>
-        <br>
-  
-        <mat-form-field class="input-full-width">
-          <input matInput type="text" name="author" ngModel placeholder="Author" required> 
-        </mat-form-field>
-  
-        <br>
-        <br>
-  
-        <mat-form-field class="input-full-width">     
-          <mat-select name="bookType" ngModel>
-              <mat-option value="" disabled>Book Type </mat-option>
-              <mat-option *ngFor = "let b of bookTypes" [value]="b.name">
-                  {{b.name}}
-              </mat-option>
-          </mat-select>
-        </mat-form-field> 
-  
-        <br>
-        <br>
-  
-        <mat-form-field class="input-full-width">     
-          <mat-select name="language" ngModel>
-              <mat-option value="" disabled>Book Language </mat-option>
-              <mat-option *ngFor = "let l of languages" [value]="l.value">
-                  {{l.viewValue}}
-              </mat-option>
-          </mat-select>
-        </mat-form-field> 
-      
-        <br>
-        <br>
-  
-        <label for="desc">Book description</label>
-        <br>
-        <textarea id="desc" name="desc" rows="4" cols="50" placeholder="About book...." ngModel></textarea>
-  
-        <br>
-        <br>
-        <br>
+    <mat-form-field class="input-full-width">
+      <input matInput 
+          required
+          type="text" 
+          [(ngModel)]="book.authorName" 
+          name="authorName" 
+          placeholder="Author" 
+          #authorName="ngModel"/>
+          <div *ngIf="authorName.invalid && (book.submitted || authorName.touched)" class="alert alert-danger">
+          <div *ngIf="authorName.errors.required"> Author Name is required. </div>
+          </div>
+  </mat-form-field>
 
-  
-        <div class="example-button-container">
-          <button class="float-right" type="submit" id="submitButton" mat-icon-button ria-label="">
-            <mat-icon> send </mat-icon></button>
-        </div>
-  
-        <br>
+    <br>
+    <br>
 
-      </form>
-    
-  </mat-card-content>
+    <mat-form-field class="input-full-width">     
+      <mat-select name="bookType" ngModel>
+          <mat-option value="" disabled>Book Type </mat-option>
+          <mat-option *ngFor = "let b of bookTypes" [value]="b.name">
+              {{b.name}}
+          </mat-option>
+      </mat-select>
+    </mat-form-field> 
 
-  <mat-card-actions>
-      
-  </mat-card-actions>
+    <br>
+    <br>
+
+    <mat-form-field class="input-full-width">     
+      <mat-select name="language" ngModel>
+          <mat-option value="" disabled>Book Language </mat-option>
+          <mat-option *ngFor = "let l of languages" [value]="l.value">
+              {{l.viewValue}}
+          </mat-option>
+      </mat-select>
+    </mat-form-field> 
   
-</mat-card>
+    <br>
+    <br>
+
+    <label for="desc">Book description</label>
+    <br>
+    <textarea id="desc" name="desc" rows="4" cols="50" placeholder="About book...." ngModel></textarea>
+
+    <br>
+    <br>
+    <br>
+
+
+    <div class="example-button-container">
+      <button class="float-right" type="submit" id="submitButton" [disabled]="!book.valid" mat-icon-button ria-label="">
+        <mat-icon> send </mat-icon></button>
+    </div>
+
+    <br>
+
+  </form>
+
+
+</div>
+
