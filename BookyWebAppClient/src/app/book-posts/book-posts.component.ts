@@ -56,7 +56,7 @@ export class BookPostsComponent implements OnInit {
             "code":  book.language,
             "name": book.language
         },
-        "time": "2020-11-01",
+        // "time": "2020-11-01",
         
     }
 
