@@ -1,3 +1,4 @@
+import { UserService } from './../services/User/user.service';
 import { RemoveFromMyListComponent } from './../remove-from-my-list/remove-from-my-list.component';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
@@ -16,31 +17,35 @@ export class FavoriteListComponent implements OnInit {
 
    //fields
    books: Book[];
-   logId: string; 
+  //  logId: string; 
    user: Users;
    like: Like;
    
    //constracture
    constructor(private postService: PostBookService,
      private route: ActivatedRoute,
+     private userService: UserService,
      public dialog: MatDialog) { }
+
+  loggedInUser: number = this.userService.getUserIdOfLoggedIn();
+
 
  ngOnInit(): void {
 
-  this.logId = localStorage.getItem('userId'); 
+  // this.logId = localStorage.getItem('userId'); 
 
-  console.log("id in My list: " + this.logId);
+  console.log("id in My list: " + this.loggedInUser);
   
-  this.postService.getLikedBooks(this.logId).subscribe((data)=>{
+  this.postService.getLikedBooks(this.loggedInUser).subscribe((data)=>{
     console.log(data);
     this.books = <Book[]>data;
-    console.log("MyList: " + this.logId + this.books);
+    console.log("MyList: " + this.loggedInUser + this.books);
    }); 
  }
 
  openDialogRemobeFromList(book: Book): void {
     console.log(book);
-    console.log("code: " + this.logId);
+    console.log("code: " + this.loggedInUser);
 
     const dialogRef = this.dialog.open(RemoveFromMyListComponent, {
       maxWidth: '50%',

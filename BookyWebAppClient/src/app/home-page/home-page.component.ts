@@ -1,3 +1,4 @@
+import { UserService } from './../services/User/user.service';
 import { Users } from 'src/app/classes/Profile/Users';
 import { UpdatePostComponent } from './../update-post/update-post.component';
 import { Component, OnInit } from '@angular/core';
@@ -19,7 +20,7 @@ export class HomePageComponent implements OnInit {
 
     //fields
     books: Book[];
-    logId: string; 
+    // logId: string; 
     user: Users;
     like: Like;
     currentUser: Users;
@@ -28,22 +29,26 @@ export class HomePageComponent implements OnInit {
     
     //constracture
     constructor(private postService: PostBookService,
+      private userService: UserService,
       private route: ActivatedRoute,
       public dialog: MatDialog,
       private profileService: ProfileService) { }
 
+    loggedInUer: number = this.userService.getUserIdOfLoggedIn();
+
+
   ngOnInit(): void {
 
-    this.logId = localStorage.getItem('userId');
+    // this.logId = localStorage.getItem('userId');
 
     this.postService.getPosts().subscribe((data)=>{
         console.log(data);
        this.books = <Book[]>data;
       });
 
-    console.log("id in home: " + this.logId);
+    console.log("id in home: " + this.loggedInUer);
   
-    this.profileService.getUserById(this.logId).subscribe((data)=>{
+    this.profileService.getUserById(this.loggedInUer).subscribe((data)=>{
       console.log(data);
       this.currentUser = <Users>data;
       console.log("Home: " + this.currentUser.id + this.currentUser.usertype);
@@ -90,11 +95,11 @@ export class HomePageComponent implements OnInit {
   }
 
   AddToMyList(id){
-    console.log("book id: " + id + "user id: " + this.logId);
+    console.log("book id: " + id + "user id: " + this.loggedInUer);
 
     let like = {
       bookId: id,
-      userId: this.logId
+      userId: this.loggedInUer
     }
 
     this.postService.addLike(like);

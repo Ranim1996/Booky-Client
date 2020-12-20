@@ -1,5 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import jwt_decode from 'jwt-decode';
+
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +11,10 @@ export class UserService {
   constructor(private httpClient: HttpClient) {  
     this.LocalStorageValue(); 
   }
-  
+
   LocalStorageValue() {
     if(localStorage.getItem("userToken") != null){
-      this.httpOptions.headers = this.httpOptions.headers.set('Authorization',  'Basic ' + localStorage.getItem("userToken"));
+      this.httpOptions.headers = this.httpOptions.headers.set('Authorization',  localStorage.getItem("userToken"));
     };
   }
   
@@ -29,18 +31,18 @@ export class UserService {
     const body = email+":"+password;
 
     // this.token = btoa(email+':'+password);
-    this.token = btoa(email);
+    // this.token = btoa(email);
 
-    localStorage.setItem('userToken', this.token);
+    // localStorage.setItem('userToken', this.token);
 
-    let httpOP = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization':  'Basic ' + localStorage.getItem("userToken")
-      })
-    };
-
-    return this.httpClient.post('http://localhost:9090/booky/users/login', body, httpOP);
+    // let httpOP = {
+    //   headers: new HttpHeaders({
+    //     'Content-Type': 'application/json',
+    //     'Authorization':  'Basic ' + localStorage.getItem("userToken")
+    //   })
+    // };
+ 
+    return this.httpClient.post('http://localhost:9090/booky/users/login', body, {responseType: 'text'});
   }
  
   logout(){
@@ -51,6 +53,21 @@ export class UserService {
     return this.httpClient.post('http://localhost:9090/booky/users/', data).toPromise().then(data => {
       console.log("Service:" + data);
     }); 
+  }
+
+  getDecodedAccessToken(token: string): any {
+    try{
+        return jwt_decode(token);
+    }
+    catch(Error){
+        return null;
+    }
+  }
+
+  getUserIdOfLoggedIn(){
+    var decoded = this.getDecodedAccessToken(localStorage.getItem("userToken"))
+    var userId = decoded['jti'];
+    return userId;
   }
   
 }

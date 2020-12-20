@@ -1,3 +1,4 @@
+import { UserService } from './../services/User/user.service';
 import { Users } from 'src/app/classes/Profile/Users';
 import { ProfileService } from './../services/Profile/profile.service';
 import { Component, OnInit } from '@angular/core';
@@ -11,22 +12,22 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class ProfileComponent implements OnInit {
 
-  types = [
-    {name: "Admin"},
-    {name: "Reader"}
-  ]
+  // types = [
+  //   {name: "Admin"},
+  //   {name: "Reader"}
+  // ]
 
-  languages = [
-    {value:"AR", viewValue: "Arabic"},
-    {value:"EN", viewValue: "English"},
-    {value:"FR", viewValue: "French"}
-  ]
+  // languages = [
+  //   {value:"AR", viewValue: "Arabic"},
+  //   {value:"EN", viewValue: "English"},
+  //   {value:"FR", viewValue: "French"}
+  // ]
 
-  countries = [
-    {value:"SY", viewValue: "Syria"},
-    {value:"FR", viewValue: "France"},
-    {value:"USA", viewValue: "America"}
-  ]
+  // countries = [
+  //   {value:"SY", viewValue: "Syria"},
+  //   {value:"FR", viewValue: "France"},
+  //   {value:"USA", viewValue: "America"}
+  // ]
 
   //fields
   notification= null;
@@ -34,13 +35,16 @@ export class ProfileComponent implements OnInit {
 
   user: Users;
   userId:number;
-  id: string;
+  // id: string;
   type: string;
 
   updated;
 
+  loggedInUser: number = this.userService.getUserIdOfLoggedIn();
+
   //constracture
   constructor(private profileService: ProfileService,
+    private userService: UserService,
               private route: ActivatedRoute,
               public dialog: MatDialog) 
               {}
@@ -48,17 +52,13 @@ export class ProfileComponent implements OnInit {
   //methods
   ngOnInit(): void {
 
-    this.id = localStorage.getItem('userId'); 
-
-    console.log("id in profile: " + this.id);
+    console.log("id in profile: " + this.loggedInUser);
     
-    this.profileService.getUserById(this.id).subscribe((data)=>{
-      console.log(data);
+    this.profileService.getUserById(this.loggedInUser).subscribe((data)=>{
+      console.log("User: " + data);
       this.user = <Users>data;
       console.log("profile: " + this.user);
      }); 
-     
-
   }
 
   //get user's information

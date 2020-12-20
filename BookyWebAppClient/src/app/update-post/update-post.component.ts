@@ -26,7 +26,7 @@ export class UpdatePostComponent implements OnInit {
     {value:"FR", viewValue: "French"}
   ]
 
-  loggedInUser: number = 1;
+  // loggedInUser: number = 1;
 
   book: Book;
 

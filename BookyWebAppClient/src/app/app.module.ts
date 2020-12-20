@@ -86,7 +86,7 @@ import { RegisterationComponent } from './registeration/registeration.component'
     MajorityComponent,
     FilterBooksComponent,
     RegisterationComponent
-],
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,

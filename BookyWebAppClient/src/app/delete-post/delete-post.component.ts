@@ -1,3 +1,4 @@
+import { UserService } from './../services/User/user.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { PostBookService } from '../services/Post/post-book.service';
@@ -12,10 +13,14 @@ export class DeletePostComponent implements OnInit {
 
   constructor(
     private postService: PostBookService,
+    private userService: UserService,
     public dialogRef: MatDialogRef<DeletePostComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
       console.log(data);
     }
+
+    loggedInUser: number = this.userService.getUserIdOfLoggedIn();
+
 
   ngOnInit(): void {
   }

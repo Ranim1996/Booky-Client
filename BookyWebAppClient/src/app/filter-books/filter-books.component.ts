@@ -1,3 +1,4 @@
+import { UserService } from './../services/User/user.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Book } from '../classes/Book/Book';
@@ -25,24 +26,28 @@ export class FilterBooksComponent implements OnInit {
   ]; 
 
   constructor(private filterService: FilterService,
+    private userService: UserService,
     private route: ActivatedRoute,
     private postService: PostBookService,
     private profileService: ProfileService
     ) { }
 
 
-    logId: string;
+    // logId: string;
     currentUser: Users;
     admin: UserType = UserType.Admin;
     reader: UserType = UserType.Reader;
     searchText = '';
 
+    loggedInUser: number = this.userService.getUserIdOfLoggedIn();
+
+
     ngOnInit(): void {
-      this.logId = localStorage.getItem('userId');
+      // this.logId = localStorage.getItem('userId');
 
-      console.log("id in filter: " + this.logId);
+      console.log("id in filter: " + this.loggedInUser);
 
-      this.profileService.getUserById(this.logId).subscribe((data)=>{
+      this.profileService.getUserById(this.loggedInUser).subscribe((data)=>{
       console.log(data);
       this.currentUser = <Users>data;
       console.log("Filter: " + this.currentUser.id + this.currentUser.usertype);
@@ -110,11 +115,11 @@ export class FilterBooksComponent implements OnInit {
     }
 
     AddToMyList(id){
-    console.log("book id: " + id + "user id: " + this.logId);
+    console.log("book id: " + id + "user id: " + this.loggedInUser);
 
     let like = {
     bookId: id,
-    userId: this.logId
+    userId: this.loggedInUser
     }
 
     this.postService.addLike(like);

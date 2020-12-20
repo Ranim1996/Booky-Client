@@ -1,3 +1,4 @@
+import { UserService } from './../services/User/user.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { PostBookService } from '../services/Post/post-book.service';
@@ -11,22 +12,26 @@ export class RemoveFromMyListComponent implements OnInit {
 
   constructor(
     private postService: PostBookService,
+    private userService: UserService,
     public dialogRef: MatDialogRef<RemoveFromMyListComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
       console.log(data);
     }
 
-  logId: string;
+  // logId: string;
+
+  loggedInUser: number = this.userService.getUserIdOfLoggedIn();
+
 
   ngOnInit(): void {
-    this.logId = localStorage.getItem('userId'); 
+    // this.logId = localStorage.getItem('userId'); 
 
-  console.log("id in My remove from list: " + this.logId);
+    console.log("id in My remove from list: " + this.loggedInUser);
   }
 
   removeBook(){
 
-    this.postService.removeBook(this.data.book.id, this.logId).subscribe();
+    this.postService.removeBook(this.data.book.id, this.loggedInUser).subscribe();
     console.log(this.data.book.id);
 
     // Close dialog
