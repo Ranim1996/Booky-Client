@@ -19,6 +19,8 @@ export class Book{
         public describtion: String,
         public time: Date,
         public language_code: Language,
+
+        public count: number,
     )
     {}
 

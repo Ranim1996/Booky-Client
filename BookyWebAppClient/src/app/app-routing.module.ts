@@ -1,6 +1,6 @@
+import { StatisticsComponent } from './statistics/statistics.component';
 import { RegisterationComponent } from './registeration/registeration.component';
 import { FilterBooksComponent } from './filter-books/filter-books.component';
-import { MajorityComponent } from './majority/majority.component';
 import { FavoriteListComponent } from './favorite-list/favorite-list.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -23,6 +23,11 @@ const routes: Routes = [
   {
     path: 'booky/posts', 
     component: BookPostsComponent,
+    // canActivate: [AuthGuard]
+  },
+  {
+    path: 'booky/statistics', 
+    component: StatisticsComponent,
     canActivate: [AuthGuard]
   },
   // {
@@ -54,11 +59,6 @@ const routes: Routes = [
   {
     path: 'booky/MyList', 
     component: FavoriteListComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'booky/Majority', 
-    component: MajorityComponent,
     canActivate: [AuthGuard]
   },
 ]

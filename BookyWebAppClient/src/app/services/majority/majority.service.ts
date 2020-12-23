@@ -21,8 +21,13 @@ export class MajorityService {
 
   constructor(private httpClient: HttpClient) { this.readLocalStorageValue(); }
 
-  public getBooksMajority(bookType){
-    return this.httpClient.get('http://localhost:9090/booky/books/Majority/' + bookType, this.httpOptions);
+
+  public statisticsPerType(){
+    return this.httpClient.get('http://localhost:9090/booky/books/Majority/Type/', this.httpOptions);
+  }
+
+  public statisticsPerLanguage(){
+    return this.httpClient.get('http://localhost:9090/booky/books/Majority/Language/', this.httpOptions);
   }
 
 }

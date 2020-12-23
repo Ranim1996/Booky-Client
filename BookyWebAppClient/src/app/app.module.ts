@@ -67,9 +67,9 @@ import { UpdatePostComponent } from './update-post/update-post.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { FavoriteListComponent } from './favorite-list/favorite-list.component';
 import { RemoveFromMyListComponent } from './remove-from-my-list/remove-from-my-list.component';
-import { MajorityComponent } from './majority/majority.component';
 import { FilterBooksComponent } from './filter-books/filter-books.component';
 import { RegisterationComponent } from './registeration/registeration.component';
+import { StatisticsComponent } from './statistics/statistics.component';
 
 @NgModule({
   declarations: [
@@ -83,9 +83,9 @@ import { RegisterationComponent } from './registeration/registeration.component'
     LogInComponent,
     FavoriteListComponent,
     RemoveFromMyListComponent,
-    MajorityComponent,
     FilterBooksComponent,
-    RegisterationComponent
+    RegisterationComponent,
+    StatisticsComponent
   ],
   imports: [
     BrowserModule,
