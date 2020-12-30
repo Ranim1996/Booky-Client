@@ -13,7 +13,7 @@
           <div *ngIf="bookName.invalid && (book.submitted || bookName.touched)" class="alert alert-danger">
           <div *ngIf="bookName.errors.required"> Book Name is required. </div>
           </div>
-  </mat-form-field>
+    </mat-form-field>
 
     <br>
     <br>
@@ -22,7 +22,23 @@
       <input matInput 
           required
           type="text" 
-          [(ngModel)]="book.authorName" 
+          [(ngModel)]="book.image" 
+          name="image" 
+          placeholder="ImageURL" 
+          #image="ngModel"/>
+          <div *ngIf="image.invalid && (image.submitted || image.touched)" class="alert alert-danger">
+          <div *ngIf="image.errors.required"> Book Image is required. </div>
+          </div>
+    </mat-form-field>
+
+    <br>
+    <br>
+
+    <mat-form-field class="input-full-width">
+      <input matInput 
+          required
+          type="text" 
+          [(ngModel)]="book.authorName"  
           name="authorName" 
           placeholder="Author" 
           #authorName="ngModel"/>

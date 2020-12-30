@@ -51,7 +51,8 @@ export class BookPostsComponent implements OnInit {
         "authorName": book.authorName,
         "bookName": book.bookName,
         "bookType": book.bookType,
-        "describtion": book.desc,
+        "describtion": book.desc, 
+        "image": book.image,
         "language_code": {
             "code":  book.language,
             "name": book.language
