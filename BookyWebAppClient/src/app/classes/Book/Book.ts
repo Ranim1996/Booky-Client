@@ -19,7 +19,7 @@ export class Book{
         public describtion: String,
         public time: Date,
         public language_code: Language,
-
+        public image: String,
         public count: number,
     )
     {}

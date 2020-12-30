@@ -39,7 +39,7 @@ export class FavoriteListComponent implements OnInit {
   this.postService.getLikedBooks(this.loggedInUser).subscribe((data)=>{
     console.log(data);
     this.books = <Book[]>data;
-    console.log("MyList: " + this.loggedInUser + this.books);
+    console.log("MyList: " + this.loggedInUser + this.books.toString());
    }); 
  }
 

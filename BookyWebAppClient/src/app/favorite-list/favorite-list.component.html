@@ -9,9 +9,17 @@
           <mat-card-content> 
                 
               <button class="float-right" mat-mini-fab aria-label="Example icon button with a remove circle icon" (click)="openDialogRemobeFromList(book)"><mat-icon matTooltip="Delete post"> remove_circle </mat-icon></button>
-          
+
+              <br>
+              <br>
+              <br>
+              <br>
+              
+            <img class="image" src="{{book.image}}" />
             <div class="intro">
-              <h4>{{book.bookName}} written by: {{book.authorName}}</h4>
+              <br>
+              <h4>{{book.bookName}}</h4>
+              <h4>written by: {{book.authorName}}</h4>
             </div>
   
             <div class="content">

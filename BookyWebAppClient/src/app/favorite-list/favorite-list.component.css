@@ -28,14 +28,21 @@
     text-align: -webkit-center;
   }
 
-  .intro{
+  /* .intro{
     margin-right: 200px;
   }
 
   .content{
     margin-right: 200px;
-  }
+  } */
 
-  .actions{
+  /* .actions{
     margin-right: 300px;
+  } */
+
+  .image{
+    width: 100px; 
+    /* margin: auto 4% auto 1%; */
+    height: 100%;
+    /* border-radius: 50%; */
   }
