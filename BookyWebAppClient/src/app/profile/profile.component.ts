@@ -12,23 +12,6 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class ProfileComponent implements OnInit {
 
-  // types = [
-  //   {name: "Admin"},
-  //   {name: "Reader"}
-  // ]
-
-  // languages = [
-  //   {value:"AR", viewValue: "Arabic"},
-  //   {value:"EN", viewValue: "English"},
-  //   {value:"FR", viewValue: "French"}
-  // ]
-
-  // countries = [
-  //   {value:"SY", viewValue: "Syria"},
-  //   {value:"FR", viewValue: "France"},
-  //   {value:"USA", viewValue: "America"}
-  // ]
-
   //fields
   notification= null;
   users: Users[] = [];

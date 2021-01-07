@@ -48,11 +48,6 @@ export class LogInComponent implements OnInit {
     .subscribe(
       (res: any) => {
         console.log(res);
-        // this.user = <Users>res;
-        // console.log(this.user);
-        // console.log(this.user.id);
-        // localStorage.setItem('userId', this.user.id.toString());
-        // localStorage.setItem('userType', this.user.usertype.toString());
         localStorage.setItem('userToken', res);
         location.reload();
         this.router.navigate(['booky/profile']);

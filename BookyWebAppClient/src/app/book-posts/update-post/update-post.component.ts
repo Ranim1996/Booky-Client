@@ -26,8 +26,6 @@ export class UpdatePostComponent implements OnInit {
     {value:"FR", viewValue: "French"}
   ]
 
-  // loggedInUser: number = 1;
-
   book: Book;
 
   id: number;
@@ -37,17 +35,12 @@ export class UpdatePostComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any) 
     { }
 
-  // myBook = new Book(1,"book","author",BookType.Classics,"Info .....", date, "EN");
-
   ngOnInit(): void {
 
     console.log(this.data.book.id);
     this.id = this.data.book.id;
-    // console.log("test: " + this.data.book);
     this.postService.getBookById(this.id)
     .subscribe((data)=>{
-      // console.log("test: " + this.data.book);
-
       this.book = <Book>this.data;
       console.log(this.data);
     });

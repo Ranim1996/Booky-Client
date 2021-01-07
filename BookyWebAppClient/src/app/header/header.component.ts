@@ -21,10 +21,6 @@ export class HeaderComponent implements OnInit {
 
 
   ngOnInit(): void {
-
-    // this.id = localStorage.getItem('userId'); 
- 
-    // this.typeOfUser = localStorage.getItem('userType');
     console.log("Header: " + this.userId);
     this.profileService.getUserById(this.userId).subscribe((data)=>{
       console.log(data);
@@ -35,30 +31,12 @@ export class HeaderComponent implements OnInit {
   
   isAdmin(): String {
     if(this.currentUser.usertype.toString() == "Admin"){
-      // console.log("Admin is logged in");
         return "Admin";
     }
     if(this.currentUser.usertype.toString() == "Reader"){
-      // console.log("Reader is logged in");
         return "Reader";
     }
   }
-
-  // admin : boolean = false;
-  // reader: boolean = false;
-
-  // isAdmin(): void {
-  //   if(this.currentUser.usertype === UserType.Admin){
-  //       this.admin = true; 
-  //   }
-  // }
-
-  // isReader(): void {
-  //   if(this.currentUser.usertype === UserType.Reader){
-  //       this.reader = true; 
-  //   }
-  // }
-
 
   logout(){
     localStorage.clear();

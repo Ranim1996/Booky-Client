@@ -1,7 +1,5 @@
 .filter-card {
-    max-width: 400px;
-    /* max-height: 100000px; */
-    
+    max-width: 400px;    
     margin-top: 100px;
     
   }
@@ -41,8 +39,5 @@
 
 .image{
   width: 100px;
-  /* margin: auto 4% auto 1%; */
-  /* height: 10%; */
-  /* border-radius: 50%; */
 }
 

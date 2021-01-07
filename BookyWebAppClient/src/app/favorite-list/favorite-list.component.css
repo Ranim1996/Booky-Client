@@ -1,6 +1,5 @@
 .example-card {
     max-width: 600px;
-    /* margin-left: 50px; */
     margin-top: 75px;
     background: lavenderblush;
   }
@@ -28,21 +27,7 @@
     text-align: -webkit-center;
   }
 
-  /* .intro{
-    margin-right: 200px;
-  }
-
-  .content{
-    margin-right: 200px;
-  } */
-
-  /* .actions{
-    margin-right: 300px;
-  } */
-
   .image{
     width: 100px; 
-    /* margin: auto 4% auto 1%; */
     height: 100%;
-    /* border-radius: 50%; */
   }

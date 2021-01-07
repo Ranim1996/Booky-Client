@@ -32,8 +32,6 @@ export class FilterBooksComponent implements OnInit {
     private profileService: ProfileService
     ) { }
 
-
-    // logId: string;
     currentUser: Users;
     admin: UserType = UserType.Admin;
     reader: UserType = UserType.Reader;
@@ -43,8 +41,6 @@ export class FilterBooksComponent implements OnInit {
 
 
     ngOnInit(): void {
-      // this.logId = localStorage.getItem('userId');
-
       console.log("id in filter: " + this.loggedInUser);
 
       this.profileService.getUserById(this.loggedInUser).subscribe((data)=>{

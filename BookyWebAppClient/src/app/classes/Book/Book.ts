@@ -3,13 +3,6 @@ import { Language } from '../Profile/Language';
 import { constructor } from 'process';
 
 export class Book{
-    // id: number;
-    // bookName: String; 
-    // authorName: String; 
-    // bookType: BookType;
-    // describtion: String; 
-    // time: Date;
-    // language: Language;
 
     constructor(
         public id: number,

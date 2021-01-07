@@ -18,14 +18,10 @@ export class RemoveFromMyListComponent implements OnInit {
       console.log(data);
     }
 
-  // logId: string;
-
   loggedInUser: number = this.userService.getUserIdOfLoggedIn();
 
 
   ngOnInit(): void {
-    // this.logId = localStorage.getItem('userId'); 
-
     console.log("id in My remove from list: " + this.loggedInUser);
   }
 

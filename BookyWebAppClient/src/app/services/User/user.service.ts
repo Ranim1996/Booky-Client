@@ -29,18 +29,6 @@ export class UserService {
   login(email, password){
 
     const body = email+":"+password;
-
-    // this.token = btoa(email+':'+password);
-    // this.token = btoa(email);
-
-    // localStorage.setItem('userToken', this.token);
-
-    // let httpOP = {
-    //   headers: new HttpHeaders({
-    //     'Content-Type': 'application/json',
-    //     'Authorization':  'Basic ' + localStorage.getItem("userToken")
-    //   })
-    // };
  
     return this.httpClient.post('http://localhost:9090/booky/users/login', body, {responseType: 'text'});
   }

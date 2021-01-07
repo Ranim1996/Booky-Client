@@ -17,7 +17,6 @@ export class FavoriteListComponent implements OnInit {
 
    //fields
    books: Book[];
-  //  logId: string; 
    user: Users;
    like: Like;
    
@@ -31,9 +30,6 @@ export class FavoriteListComponent implements OnInit {
 
 
  ngOnInit(): void {
-
-  // this.logId = localStorage.getItem('userId'); 
-
   console.log("id in My list: " + this.loggedInUser);
   
   this.postService.getLikedBooks(this.loggedInUser).subscribe((data)=>{

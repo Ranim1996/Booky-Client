@@ -20,7 +20,6 @@ export class HomePageComponent implements OnInit {
 
     //fields
     books: Book[];
-    // logId: string; 
     user: Users;
     like: Like;
     currentUser: Users;
@@ -38,8 +37,6 @@ export class HomePageComponent implements OnInit {
 
 
   ngOnInit(): void {
-
-    // this.logId = localStorage.getItem('userId');
 
     this.postService.getPosts().subscribe((data)=>{
         console.log(data);
