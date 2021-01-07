@@ -59,7 +59,8 @@ export class ProfileComponent implements OnInit {
       (res: Users) => {
         this.updated = res;
         console.log("updated");
-        window.location.reload();
+        // window.location.reload();
+        this.ngOnInit();
 
       });
   }
