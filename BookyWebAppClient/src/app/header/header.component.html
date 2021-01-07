@@ -27,6 +27,9 @@
         <!-- *ngIf="currentUser.usertype == 'Reader'" -->
         <a class="nav-link waves-light" href="#" [routerLink]="['/booky', 'MyList']" mdbWavesEffect *ngIf="isAdmin() == 'Reader'">MyList</a>
       </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link waves-light" href="#" [routerLink]="['/booky', 'chatRoom']" mdbWavesEffect>Chat Room</a>
+      </li>
 
     </ul>
     <!-- Links -->

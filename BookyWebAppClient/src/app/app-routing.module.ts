@@ -1,3 +1,4 @@
+import { ChatRoomComponent } from './chat-room/chat-room.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { RegisterationComponent } from './registeration/registeration.component';
 import { FilterBooksComponent } from './filter-books/filter-books.component';
@@ -59,6 +60,11 @@ const routes: Routes = [
   {
     path: 'booky/MyList', 
     component: FavoriteListComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'booky/chatRoom', 
+    component: ChatRoomComponent,
     canActivate: [AuthGuard]
   },
 ]

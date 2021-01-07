@@ -1,0 +1,26 @@
+
+  <div class="container-fluid" >
+
+    <div class="container p-3 my-3 text-white" id="profile">
+
+        <h1>Chat Room:</h1>
+
+    </div>
+
+        <div class="container">
+
+          <input class="box" id="message" type="message" [(ngModel)]="sentMessage" (keyup.enter)="sendMessage()">
+          
+          <br>
+
+          
+          <button (click)="sendMessage()">Send Message</button>
+          
+          <mat-nav-list *ngFor="let receivedMessage of receivedMessages" style="width: 22em">
+            <mat-divider></mat-divider>
+            <mat-list-item>{{receivedMessage.message}}</mat-list-item>
+          </mat-nav-list>
+    
+        </div>
+
+</div>

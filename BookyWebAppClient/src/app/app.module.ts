@@ -70,6 +70,7 @@ import { RemoveFromMyListComponent } from './remove-from-my-list/remove-from-my-
 import { FilterBooksComponent } from './filter-books/filter-books.component';
 import { RegisterationComponent } from './registeration/registeration.component';
 import { StatisticsComponent } from './statistics/statistics.component';
+import { ChatRoomComponent } from './chat-room/chat-room.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +86,8 @@ import { StatisticsComponent } from './statistics/statistics.component';
     RemoveFromMyListComponent,
     FilterBooksComponent,
     RegisterationComponent,
-    StatisticsComponent
+    StatisticsComponent,
+    ChatRoomComponent
   ],
   imports: [
     BrowserModule,

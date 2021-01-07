@@ -1,0 +1,25 @@
+button{margin-left: 5px;}
+
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    min-height: 80%;
+    padding: 20px;
+    background-color: lavenderblush;
+}
+
+h1{
+    padding-left: 5%;
+}
+
+#profile{
+    background: thistle;
+}
+
+.box{
+    height: 70%;
+    width: 70%;
+}
