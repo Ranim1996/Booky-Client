@@ -1,7 +1,7 @@
-import { PostBookService } from './../services/Post/post-book.service';
+import { PostBookService } from '../../services/Post/post-book.service';
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { Book } from '../classes/Book/Book';
+import { Book } from '../../classes/Book/Book';
 
 @Component({
   selector: 'app-update-post',

@@ -1,12 +1,12 @@
-import { UserService } from './../services/User/user.service';
+import { UserService } from '../../services/User/user.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Book } from '../classes/Book/Book';
-import { Users } from '../classes/Profile/Users';
-import { UserType } from '../classes/Profile/UserType';
-import { FilterService } from '../services/filter/filter.service';
-import { PostBookService } from '../services/Post/post-book.service';
-import { ProfileService } from '../services/Profile/profile.service';
+import { Book } from '../../classes/Book/Book';
+import { Users } from '../../classes/Profile/Users';
+import { UserType } from '../../classes/Profile/UserType';
+import { FilterService } from '../../services/filter/filter.service';
+import { PostBookService } from '../../services/Post/post-book.service';
+import { ProfileService } from '../../services/Profile/profile.service';
 
 @Component({
   selector: 'app-filter-books',

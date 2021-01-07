@@ -1,7 +1,7 @@
 import { ChatRoomComponent } from './chat-room/chat-room.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { RegisterationComponent } from './registeration/registeration.component';
-import { FilterBooksComponent } from './filter-books/filter-books.component';
+import { FilterBooksComponent } from './book-posts/filter-books/filter-books.component';
 import { FavoriteListComponent } from './favorite-list/favorite-list.component';
 import { LogInComponent } from './log-in/log-in.component';
 import { HomePageComponent } from './home-page/home-page.component';

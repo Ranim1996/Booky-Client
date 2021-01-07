@@ -1,5 +1,5 @@
-import { UserService } from './../services/User/user.service';
-import { RemoveFromMyListComponent } from './../remove-from-my-list/remove-from-my-list.component';
+import { UserService } from '../services/User/user.service';
+import { RemoveFromMyListComponent } from './remove-from-my-list/remove-from-my-list.component';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
