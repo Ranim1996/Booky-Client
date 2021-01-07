@@ -35,7 +35,7 @@
             <select id="bookType" name="bookType" [(ngModel)]="this.data.book.bookType"
             class="form-control">
                 <option *ngFor="let t of bookTypes" [value]="t.name">
-                    {{t.name}}
+                    {{t.value}}
                 </option>
             </select>
         </div>

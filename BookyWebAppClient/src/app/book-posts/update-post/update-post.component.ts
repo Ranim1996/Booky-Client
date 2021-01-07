@@ -11,13 +11,13 @@ import { Book } from '../../classes/Book/Book';
 export class UpdatePostComponent implements OnInit {
 
   bookTypes = [
-    {name: "Romantic"},
-    {name: "DetectiveandMystery"},
-    {name: "Horror"},
-    {name: "Classics"},
-    {name: "ActionandAdventure"},
-    {name: "Fantasy"},
-    {name: "LitraryFiction"}
+    {name: "Romantic", value: "Romantic"},
+    {name: "DetectiveandMystery", value: "Detective and Mystery"}, 
+    {name: "Horror", value: "Horror"},
+    {name: "Classics", value: "Classics"},
+    {name: "ActionandAdventure", value: "Action and Adventure"},
+    {name: "Fantasy", value: "Fantasy"},
+    {name: "LitraryFiction", value: "Litrary Fiction"}
   ]
 
   languages = [

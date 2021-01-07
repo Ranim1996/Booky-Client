@@ -39,6 +39,14 @@ export class FavoriteListComponent implements OnInit {
    }); 
  }
 
+ getMyList(){
+  this.postService.getLikedBooks(this.loggedInUser).subscribe((data)=>{
+    console.log(data);
+    this.books = <Book[]>data;
+    console.log("MyList: " + this.loggedInUser + this.books.toString());
+   }); 
+ }
+
  openDialogRemobeFromList(book: Book): void {
     console.log(book);
     console.log("code: " + this.loggedInUser);
@@ -49,7 +57,7 @@ export class FavoriteListComponent implements OnInit {
     }); 
     dialogRef.afterClosed()
       .subscribe(res => {
-        this.ngOnInit();
+        this.getMyList();
       // window.location.reload();
     });
  }

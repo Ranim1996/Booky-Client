@@ -71,6 +71,9 @@ import { FilterBooksComponent } from './book-posts/filter-books/filter-books.com
 import { RegisterationComponent } from './registeration/registeration.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { ChatRoomComponent } from './chat-room/chat-room.component';
+import { ForbiddenComponent } from './errors-handeling/forbidden/forbidden.component';
+import { NotFoundComponent } from './errors-handeling/not-found/not-found.component';
+import { InternalServerErrorsComponent } from './errors-handeling/internal-server-errors/internal-server-errors.component';
 
 @NgModule({
   declarations: [
@@ -87,7 +90,10 @@ import { ChatRoomComponent } from './chat-room/chat-room.component';
     FilterBooksComponent,
     RegisterationComponent,
     StatisticsComponent,
-    ChatRoomComponent
+    ChatRoomComponent,
+    ForbiddenComponent,
+    NotFoundComponent,
+    InternalServerErrorsComponent,
   ],
   imports: [
     BrowserModule,

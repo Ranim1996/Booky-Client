@@ -1,3 +1,6 @@
+import { InternalServerErrorsComponent } from './errors-handeling/internal-server-errors/internal-server-errors.component';
+import { NotFoundComponent } from './errors-handeling/not-found/not-found.component';
+import { ForbiddenComponent } from './errors-handeling/forbidden/forbidden.component';
 import { ChatRoomComponent } from './chat-room/chat-room.component';
 import { StatisticsComponent } from './statistics/statistics.component';
 import { RegisterationComponent } from './registeration/registeration.component';
@@ -17,33 +20,21 @@ const routes: Routes = [
     component: ProfileComponent,
     canActivate: [AuthGuard]
   },
-  // {
-  //   path: 'booky/users/:id/profile', 
-  //   component: ProfileComponent,
-  // },
   {
     path: 'booky/posts', 
     component: BookPostsComponent,
-    // canActivate: [AuthGuard]
+    canActivate: [AuthGuard]
   },
   {
     path: 'booky/statistics', 
     component: StatisticsComponent,
     canActivate: [AuthGuard]
   },
-  // {
-  //   path: 'booky/users/:id/posts', 
-  //   component: BookPostsComponent,
-  // },
   {
     path: 'booky/homePage', 
     component: HomePageComponent,
     canActivate: [AuthGuard]
   },
-  // {
-  //   path: 'booky/users/:id/homePage', 
-  //   component: HomePageComponent,
-  // },
   {
     path: 'booky/books/filter', 
     component: FilterBooksComponent,
@@ -67,6 +58,18 @@ const routes: Routes = [
     component: ChatRoomComponent,
     canActivate: [AuthGuard]
   },
+  {
+		path: 'booky/forbidden',
+		component: ForbiddenComponent,
+  },
+  {
+		path: 'booky/not-found',
+		component: NotFoundComponent,
+  },
+  {
+		path: 'booky/server-errors',
+		component: InternalServerErrorsComponent,
+	},
 ]
 
 
