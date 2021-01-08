@@ -30,13 +30,13 @@ export class ServerErrorInterceptor implements HttpInterceptor {
 						if (!navigator.onLine) {
 							console.log("offline")
 							// Handle offline error
-							this.router.navigate(['offline']);
+							this.router.navigate(['booky/offline-error']);
 						} 
 						else {
 							console.log("server error")
 							
 							if(error.status == 401) { // Unauthorized
-								this.router.navigate(['login']);
+								this.router.navigate(['booky/login']);
 							}
 
 							else if(error.status == 403) { // Forbidden
@@ -46,12 +46,15 @@ export class ServerErrorInterceptor implements HttpInterceptor {
 							else if (error.status == 404) { // Not found
 								this.router.navigate(['/booky/not-found']);
 							}
-		
+		 
 							else if(error.status == 500) { // Internal server error
 								this.router.navigate(['booky/server-errors']);
 							}
 							else if(error.status == 0) { // Unexpected error (Server is down)
-								this.router.navigate(['unexpected-error']);
+								this.router.navigate(['booky/unexpected-error']);
+							} 
+							else if(error.status == 400) { // bad request
+								this.router.navigate(['booky/bad-request']);
 							} 
 							else { // other
 								let message = errorService.getServerMessage(error);

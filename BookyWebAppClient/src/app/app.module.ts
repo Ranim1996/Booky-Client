@@ -74,6 +74,9 @@ import { ChatRoomComponent } from './chat-room/chat-room.component';
 import { ForbiddenComponent } from './errors-handeling/forbidden/forbidden.component';
 import { NotFoundComponent } from './errors-handeling/not-found/not-found.component';
 import { InternalServerErrorsComponent } from './errors-handeling/internal-server-errors/internal-server-errors.component';
+import { BadRequestComponent } from './errors-handeling/bad-request/bad-request.component';
+import { UnExpectedErrorComponent } from './errors-handeling/un-expected-error/un-expected-error.component';
+import { OfflineErrorComponent } from './errors-handeling/offline-error/offline-error.component';
 
 @NgModule({
   declarations: [
@@ -94,6 +97,9 @@ import { InternalServerErrorsComponent } from './errors-handeling/internal-serve
     ForbiddenComponent,
     NotFoundComponent,
     InternalServerErrorsComponent,
+    BadRequestComponent,
+    UnExpectedErrorComponent,
+    OfflineErrorComponent,
   ],
   imports: [
     BrowserModule,

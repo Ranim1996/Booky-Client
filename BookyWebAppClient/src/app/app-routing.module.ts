@@ -1,3 +1,4 @@
+import { BadRequestComponent } from './errors-handeling/bad-request/bad-request.component';
 import { InternalServerErrorsComponent } from './errors-handeling/internal-server-errors/internal-server-errors.component';
 import { NotFoundComponent } from './errors-handeling/not-found/not-found.component';
 import { ForbiddenComponent } from './errors-handeling/forbidden/forbidden.component';
@@ -13,6 +14,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthGuard } from './Auth/auth.guard';
+import { UnExpectedErrorComponent } from './errors-handeling/un-expected-error/un-expected-error.component';
+import { OfflineErrorComponent } from './errors-handeling/offline-error/offline-error.component';
 
 const routes: Routes = [
   {
@@ -69,6 +72,18 @@ const routes: Routes = [
   {
 		path: 'booky/server-errors',
 		component: InternalServerErrorsComponent,
+  },
+  {
+		path: 'booky/bad-request',
+		component: BadRequestComponent,
+  },
+  {
+		path: 'booky/unexpected-error',
+		component: UnExpectedErrorComponent,
+  },
+  {
+		path: 'booky/offline-error',
+		component: OfflineErrorComponent,
 	},
 ]
 
