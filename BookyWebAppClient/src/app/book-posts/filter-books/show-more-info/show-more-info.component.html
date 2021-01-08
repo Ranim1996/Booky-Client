@@ -1,0 +1,22 @@
+<button class="btn" mat-mini-fab aria-label="Example icon button with a highlight off icon" href="#"><mat-icon matTooltip="Close" (click)="noClick()"> highlight_off</mat-icon></button>
+
+<div class="container">
+
+    <img class="image" src="{{data.book.image}}" />
+          <div class="intro">
+            <br>
+            <h4>{{this.data.book.bookName}}</h4>
+            <h4>written by: {{this.data.book.authorName}}</h4>
+          </div>
+
+          <div class="content">
+            <h5>Book Type: {{this.data.book.bookType}} Language: {{this.data.book.language_code.name}}</h5>
+            <p>Brief describtion: {{this.data.book.describtion}}</p>
+          </div>
+          
+
+          <div class="detail">
+            <h6>Published on: {{this.data.book.time}}</h6>
+          </div>
+
+</div>

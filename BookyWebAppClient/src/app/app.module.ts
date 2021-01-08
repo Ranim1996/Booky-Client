@@ -77,6 +77,7 @@ import { InternalServerErrorsComponent } from './errors-handeling/internal-serve
 import { BadRequestComponent } from './errors-handeling/bad-request/bad-request.component';
 import { UnExpectedErrorComponent } from './errors-handeling/un-expected-error/un-expected-error.component';
 import { OfflineErrorComponent } from './errors-handeling/offline-error/offline-error.component';
+import { ShowMoreInfoComponent } from './book-posts/filter-books/show-more-info/show-more-info.component';
 
 @NgModule({
   declarations: [
@@ -100,6 +101,7 @@ import { OfflineErrorComponent } from './errors-handeling/offline-error/offline-
     BadRequestComponent,
     UnExpectedErrorComponent,
     OfflineErrorComponent,
+    ShowMoreInfoComponent,
   ],
   imports: [
     BrowserModule,

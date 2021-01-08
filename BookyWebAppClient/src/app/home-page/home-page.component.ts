@@ -30,7 +30,7 @@ export class HomePageComponent implements OnInit {
     constructor(private postService: PostBookService,
       private userService: UserService,
       private route: ActivatedRoute,
-      public dialog: MatDialog,
+      public dialog: MatDialog, 
       private profileService: ProfileService) { }
 
     loggedInUer: number = this.userService.getUserIdOfLoggedIn();

@@ -7,6 +7,8 @@ import { UserType } from '../../classes/Profile/UserType';
 import { FilterService } from '../../services/filter/filter.service';
 import { PostBookService } from '../../services/Post/post-book.service';
 import { ProfileService } from '../../services/Profile/profile.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ShowMoreInfoComponent } from './show-more-info/show-more-info.component';
 
 @Component({
   selector: 'app-filter-books',
@@ -29,7 +31,8 @@ export class FilterBooksComponent implements OnInit {
     private userService: UserService,
     private route: ActivatedRoute,
     private postService: PostBookService,
-    private profileService: ProfileService
+    private profileService: ProfileService,
+    public dialog: MatDialog
     ) { }
 
     currentUser: Users;
@@ -122,5 +125,14 @@ export class FilterBooksComponent implements OnInit {
     console.log("Like Is Added" + like);
 
     }
+
+  openDialogShowMoreInfo(book: Book): void {
+    console.log(book);
+    const dialogRef = this.dialog.open(ShowMoreInfoComponent, {
+      maxWidth: '50%',
+      data: {book: book}
+    }); 
+
+  }
 
 }
