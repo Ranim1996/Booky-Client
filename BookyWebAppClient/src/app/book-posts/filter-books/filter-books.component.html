@@ -86,11 +86,11 @@
           <tr id="bookId"  *ngFor="let book of books">
             
               <td class="font-italic"> 
+                <button class="float-right" mat-mini-fab aria-label="Example icon button with a info icon" href="#"><mat-icon matTooltip="Show more info" (click)="openDialogShowMoreInfo(book)"> info </mat-icon></button>
                 <img class="image" src="{{book.image}}" />
                 {{book.bookName}} - {{book.authorName}}<br>
                 <div class="btn">
                   <button mat-mini-fab aria-label="Example icon button with a favorite icon" href="#" *ngIf="currentUser.usertype == 'Reader'"><mat-icon matTooltip="Add to my favorite" (click)="AddToMyList(book.id)" *ngIf="currentUser.usertype == 'Reader'"> favorite </mat-icon></button>
-                  <button class="bg-info text-white float-right" (click)="openDialogShowMoreInfo(book)">Show more info</button>
                 </div>
                 <br>
                 <br>

@@ -75,7 +75,7 @@ export class ChatService {
   }
 
   public getMessages(){
-    return this.httpClient.get('http://localhost:9090/booky/chat/', this.httpOptions);
+    return this.httpClient.get('http://localhost:19090/booky/chat/', this.httpOptions);
   }
 }
 

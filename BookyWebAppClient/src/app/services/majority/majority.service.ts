@@ -23,11 +23,11 @@ export class MajorityService {
 
 
   public statisticsPerType(){
-    return this.httpClient.get('http://localhost:9090/booky/books/Majority/Type/', this.httpOptions);
+    return this.httpClient.get('http://localhost:19090/booky/books/Majority/Type/', this.httpOptions);
   }
 
   public statisticsPerLanguage(){
-    return this.httpClient.get('http://localhost:9090/booky/books/Majority/Language/', this.httpOptions);
+    return this.httpClient.get('http://localhost:19090/booky/books/Majority/Language/', this.httpOptions);
   }
 
 }

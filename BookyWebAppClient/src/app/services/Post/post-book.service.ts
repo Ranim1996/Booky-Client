@@ -21,41 +21,41 @@ export class PostBookService {
   };
 
   public getPosts(){
-    return this.httpClient.get('http://localhost:9090/booky/books/', this.httpOptions);
+    return this.httpClient.get('http://localhost:19090/booky/books/', this.httpOptions);
    }
  
   public createPost(data){
-    return this.httpClient.post('http://localhost:9090/booky/books/', data, this.httpOptions).toPromise().then(data => {
+    return this.httpClient.post('http://localhost:19090/booky/books/', data, this.httpOptions).toPromise().then(data => {
       console.log(data);
     });
      
    }
 
   public deletePost(bookId){
-    return this.httpClient.delete('http://localhost:9090/booky/books/' + bookId, this.httpOptions);
+    return this.httpClient.delete('http://localhost:19090/booky/books/' + bookId, this.httpOptions);
   }
 
   public getBookById(id){ 
-    return this.httpClient.get("http://localhost:9090/booky/books/" + id, this.httpOptions);
+    return this.httpClient.get("http://localhost:19090/booky/books/" + id, this.httpOptions);
   }
 
   public updatePost(id, book) {
-    const url = 'http://localhost:9090/booky/books/' + id;
+    const url = 'http://localhost:19090/booky/books/' + id;
     return this.httpClient.put(url, book, this.httpOptions);
   }
 
   public addLike(data){
-    return this.httpClient.post('http://localhost:9090/booky/books/like/', data).toPromise().then(data => {
+    return this.httpClient.post('http://localhost:19090/booky/books/like/', data).toPromise().then(data => {
       console.log("In post service: " + data);
     });   
   }
 
   public getLikedBooks(id){ 
-    return this.httpClient.get("http://localhost:9090/booky/books/MyList?id=" + id, this.httpOptions);
+    return this.httpClient.get("http://localhost:19090/booky/books/MyList?id=" + id, this.httpOptions);
   }
 
   public removeBook(bookId, userId){
-    return this.httpClient.delete('http://localhost:9090/booky/books/MyList/' + bookId + "/user/" + userId, this.httpOptions);
+    return this.httpClient.delete('http://localhost:19090/booky/books/MyList/' + bookId + "/user/" + userId, this.httpOptions);
   }
 
   

@@ -22,19 +22,19 @@ export class FilterService {
   constructor(private httpClient: HttpClient) { this.readLocalStorageValue(); }
 
   public filterBooksByBookType(bookType){
-    return this.httpClient.get('http://localhost:9090/booky/books?type=' + bookType, this.httpOptions);
+    return this.httpClient.get('http://localhost:19090/booky/books?type=' + bookType, this.httpOptions);
   }
 
   public filterBooksByLanguage(language){
-    return this.httpClient.get('http://localhost:9090/booky/books?language=' + language, this.httpOptions);
+    return this.httpClient.get('http://localhost:19090/booky/books?language=' + language, this.httpOptions);
   }
 
   public filterBooksByTypeAndLanguage(type, language){
-    return this.httpClient.get('http://localhost:9090/booky/books?type=' +  type + "&language=" + language, this.httpOptions);
+    return this.httpClient.get('http://localhost:19090/booky/books?type=' +  type + "&language=" + language, this.httpOptions);
   }
 
   public filterBooksByName(name){
-    return this.httpClient.get('http://localhost:9090/booky/books?bookName=' + name, this.httpOptions);
+    return this.httpClient.get('http://localhost:19090/booky/books?bookName=' + name, this.httpOptions);
   }
 
 

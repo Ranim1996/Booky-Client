@@ -29,3 +29,8 @@
   height: 400px;
   margin-top: 100px;
 }
+
+.canvasjs-chart-credit{
+  display: none !important;
+}
+

@@ -30,7 +30,7 @@ export class UserService {
 
     const body = email+":"+password;
  
-    return this.httpClient.post('http://localhost:9090/booky/users/login', body, {responseType: 'text'});
+    return this.httpClient.post('http://localhost:19090/booky/users/login', body, {responseType: 'text'});
   }
  
   logout(){
@@ -38,7 +38,7 @@ export class UserService {
   }
 
   public addNewUser(data){
-    return this.httpClient.post('http://localhost:9090/booky/users/', data).toPromise().then(data => {
+    return this.httpClient.post('http://localhost:19090/booky/users/', data).toPromise().then(data => {
       console.log("Service:" + data);
     }); 
   }
